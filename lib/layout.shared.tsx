@@ -10,7 +10,7 @@ export function baseOptions(): BaseLayoutProps {
           <h1 className='h-10 w-10 text-secondary-foreground'>
             <IconLayoutDashboardFilled/>
           </h1>
-          <h1 className='text-primary-foreground hidden md:block text-lg font-semibold tracking-tight -mt-4'>AHs UI</h1>
+          <h1 className='text-primary-foreground hidden md:block text-lg font-semibold tracking-tight -mt-4'>AHs Lab</h1>
         </div>
       ),
       transparentMode: 'top',

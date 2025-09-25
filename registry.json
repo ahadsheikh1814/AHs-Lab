@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "AHs Ui",
-  "homepage": "http://localhost:3000",
+  "name": "AHs Lab",
+  "homepage": "https://ahs-lab.vercel.app/",
   "items": [
     {
       "name": "AI-Input",
