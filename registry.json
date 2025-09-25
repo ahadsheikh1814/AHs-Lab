@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "AHs Ui",
+  "homepage": "http://localhost:3000",
+  "items": [
+    {
+      "name": "AI-Input",
+      "type": "registry:component",
+      "title": "AI Input",
+      "description": "An input component with AI capabilities.",
+      "files": [
+        {
+          "path": "resistry/Ai-Inputs.tsx",
+          "type": "registry:component",
+          "target": "components/AHs/Ai-Input.tsx"
+        }
+      ]
+    }
+  ]
+}
