@@ -15,6 +15,21 @@
           "target": "components/AHs/Ai-Input.tsx"
         }
       ]
+    },{
+      "name": "TypeWriterEffect",
+      "type": "registry:component",
+      "title": "Type Writer Effect",
+      "description": "A typewriter effect component for displaying animated text.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "resistry/TypeWriterEffect.tsx",
+          "type": "registry:component",
+          "target": "components/AHs/TypeWriterEffect.tsx"
+        }
+      ]
     }
   ]
 }
