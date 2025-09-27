@@ -18,5 +18,7 @@
     "lib": "@/lib",
     "hooks": "@/hooks"
   },
-  "registries": {}
+  "registries": {
+    "@AHs_Lab":"https://ahs-lab.vercel.app/r/{name}.json"
+  }
 }

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "AHs Lab",
+  "homepage": "https://ahs-lab.vercel.app/",
+  "items": [
+    {
+      "name": "AI-Input",
+      "type": "registry:component",
+      "title": "AI Input",
+      "description": "An input component with AI capabilities.",
+      "files": [
+        {
+          "path": "resistry/Ai-Inputs.tsx",
+          "type": "registry:component",
+          "target": "components/AHs/Ai-Input.tsx"
+        }
+      ]
+    },{
+      "name": "TypeWriterEffect",
+      "type": "registry:component",
+      "title": "Type Writer Effect",
+      "description": "A typewriter effect component for displaying animated text.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "resistry/TypeWriterEffect.tsx",
+          "type": "registry:component",
+          "target": "components/AHs/TypeWriterEffect.tsx"
+        }
+      ]
+    }
+  ]
+}

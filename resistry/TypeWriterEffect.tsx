@@ -76,7 +76,7 @@ const Typewriter = ({ texts }: TypewriterProps) => {
     <span className="inline-block">
       <span className="text-primary">{currentText}</span>
       <span
-        className={`inline-block w-0.5 h-16 bg-lime-500 ml-1 ${
+        className={`inline-block w-0.5 h-16 bg-lime-500 ml-1 text-primary ${
           showCursor ? "opacity-100" : "opacity-0"
         } transition-opacity duration-100`}
       />
