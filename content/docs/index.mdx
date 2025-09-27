@@ -1,7 +1,64 @@
 ---
 title: Introduction
+icon: Target
 ---
+Welcome to the documentation for AHs UI Lab. This guide will help you get started and use the components effectively.
 
-## Introduction
+## shadcn UI
+```bash
+npx shadcn@latest init
+```
 
-Introduction and usage guidelines
+
+## Bun Package Manager
+
+All commands in this documentation use **Bun** as the package manager.
+
+If you haven't installed Bun yet, run:
+
+```bash
+curl -fsSL https://bun.sh/install | bash
+```
+
+## Next.js
+
+This project uses Next.js for building modern React applications.
+
+## Tailwind CSS
+
+All styling is done with Tailwind CSS.
+
+To install Tailwind CSS, run:
+
+```bash
+npm install tailwindcss @tailwindcss/postcss postcss
+```
+
+Then configure PostCSS plugins in postcss.config.mjs:
+
+```js
+const config = {
+  plugins: {
+    "@tailwindcss/postcss": {},
+  },
+};
+export default config;
+```
+
+Import Tailwind CSS in your global stylesheet **globals.css**:
+
+```css
+@import "tailwindcss";
+```
+
+Now you can use Tailwind classes in your components, for example:
+
+```tsx
+export default function Home() {
+  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+}
+```
+
+## Motion
+
+Motion is used for animations in UI components. Refer to the component documentation for usage examples.
