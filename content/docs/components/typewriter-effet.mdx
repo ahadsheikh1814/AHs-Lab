@@ -1,5 +1,7 @@
 ---
-title: Type Writer Effect
+title: TypeWriter Effect
+description: A typewriter effect component for displaying animated text..
+icon: TextCursor
 ---
 import TypewriterEffect from "@/resistry/TypeWriterEffect";
 
@@ -8,8 +10,9 @@ import TypewriterEffect from "@/resistry/TypeWriterEffect";
 A typewriter effect component for displaying animated text.
 
 ## Demo
+<Preview link="TypeWriterEffect">
 <TypewriterEffect/>
-
+</Preview>
 
 ## Installation
 To install the AI Input component, you can use npm or yarn. Run one of the following commands in your project directory:
@@ -24,7 +27,7 @@ bunx --bun shadcn@latest add https://ahs-lab.vercel.app/r/TypeWriterEffect.json
 import { motion } from "motion/react";
 import React, { useState, useEffect } from "react";
 
-interface TextProps {
+interface TextProps {  
   texts?: string[];
 }
 
