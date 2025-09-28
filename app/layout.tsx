@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { RootProvider } from 'fumadocs-ui/provider';
+import { RootProvider } from "fumadocs-ui/provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,7 +15,12 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "AHs Lab - UI Components for Developers",
-  description: "AHs Lab is a collection of prebuilt, customizable, and developer-friendly UI components designed to help you cut boilerplate and ship faster.",
+  description:
+    "AHs Lab is a collection of prebuilt, customizable, and developer-friendly UI components designed to help you cut boilerplate and ship faster.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -28,10 +33,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        
-        <RootProvider>
-          {children}
-        </RootProvider>
+        <RootProvider>{children}</RootProvider>
       </body>
     </html>
   );

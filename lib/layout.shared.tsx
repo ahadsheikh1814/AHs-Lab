@@ -14,6 +14,7 @@ export function baseOptions(): BaseLayoutProps {
         </div>
       ),
       transparentMode: 'top',
+      enabled:true
     },
     links:[
         {
