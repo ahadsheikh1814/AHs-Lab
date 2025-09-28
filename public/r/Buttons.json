@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "Buttons",
+  "type": "registry:component",
+  "title": "AHs Buttons",
+  "description": "Animated and cool buttons.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "resistry/Buttons.tsx",
+      "content": "\"use client\";\r\nimport { cn } from \"@/lib/utils\";\r\nimport React from \"react\";\r\nimport { motion } from \"motion/react\";\r\n\r\nexport const ButtonsColorfull = ({\r\n  children,\r\n  className,\r\n}: {\r\n  children: React.ReactNode;\r\n  className?: string;\r\n}) => {\r\n  return (\r\n    <motion.button \r\n      className={cn(\r\n        // Base styles\r\n        'px-6 py-3 rounded-lg font-semibold text-base cursor-pointer',\r\n        'relative overflow-hidden transition-all duration-100 ease-in-out',\r\n        'transform hover:scale-105 active:scale-95',\r\n        \r\n        // Gradient background\r\n        'bg-gradient-to-r from-green-400 via-cyan-400 to-pink-400',\r\n        'hover:bg-gradient-to-r hover:from-green-500 hover:via-cyan-500 hover:to-pink-500',\r\n        \r\n        // Text styling\r\n        'text-white drop-shadow-sm',\r\n        \r\n        // Focus states for accessibility\r\n        'focus:outline-none focus:ring-4 focus:ring-pink-300/50',\r\n        \r\n        // Shadow effects\r\n        'shadow-lg hover:shadow-xl',\r\n        \r\n        className\r\n      )}\r\n      whileHover={{ scale: 1.05 }}\r\n      whileTap={{ scale: 0.95 }}\r\n      transition={{ duration:.1 , ease:\"backOut\" }}\r\n    >\r\n      {children}\r\n    </motion.button>\r\n  );\r\n};\r\n\r\nexport const ButtonsDarkToLight = ({\r\n  children,\r\n  className,\r\n}: {\r\n  children: React.ReactNode;\r\n  className?: string;\r\n})=>{\r\n    return(\r\n        <button className={cn(className,\r\n            'px-6 py-2 rounded font-semibold text-base cursor-pointer border border-neutral-700 text-white',\r\n        'relative overflow-hidden transition-colors duration-1000 ease-in-out',\r\n        'bg-gradient-to-br from-purple-950 to-pink-950',\r\n        'hover:from-purple-500 to-pink-500'\r\n        )\r\n        }>\r\n            {children}\r\n        </button>\r\n    )\r\n}\r\n\r\n\r\nexport const ButtonSimple = ({\r\n  children,\r\n  className,\r\n}: {\r\n  children: React.ReactNode;\r\n  className?: string;\r\n})=>{\r\n    return(\r\n        <button className={cn(className,\r\n            'px-6 py-3 rounded-lg font-semibold text-base cursor-pointer border border-neutral-700',\r\n        'relative overflow-hidden transition-all duration-100 ease-in-out',\r\n        'transform hover:scale-105 active:scale-95'\r\n        )\r\n        }>\r\n            {children}\r\n        </button>\r\n    )\r\n}",
+      "type": "registry:component",
+      "target": "components/AHs/Buttons.tsx"
+    }
+  ]
+}

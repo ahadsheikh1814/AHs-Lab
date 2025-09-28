@@ -3,7 +3,7 @@
   "name": "AI-Input",
   "type": "registry:component",
   "title": "AI Input",
-  "description": "An input component with AI capabilities.",
+  "description": "Modern AI chat interface components",
   "files": [
     {
       "path": "resistry/Ai-Inputs.tsx",

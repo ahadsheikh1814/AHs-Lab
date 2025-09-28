@@ -30,6 +30,21 @@
           "target": "components/AHs/TypeWriterEffect.tsx"
         }
       ]
+    },{
+      "name": "Buttons",
+      "type": "registry:component",
+      "title": "AHs Buttons",
+      "description": "Animated and cool buttons.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "resistry/Buttons.tsx",
+          "type": "registry:component",
+          "target": "components/AHs/Buttons.tsx"
+        }
+      ]
     }
   ]
 }

@@ -17,13 +17,13 @@ const TypewriterEffect = ({ texts = ["beautiful.", "modern.", "elegant.", "minim
         initial={{ width: "0%" }}
         animate={{ width: "100%" }}
         transition={{ duration: 0.3, ease: "easeInOut", delay: 0.5 }}
-        className="w-full absolute bottom-0 left-0 h-[70px] bg-lime-500/10 block"
+        className="w-full absolute bottom-0 left-0 h-[70px] bg-[#14b8a6]/10 block"
       />
       <motion.span
         initial={{ width: "0%" }}
         animate={{ width: "100%" }}
         transition={{ duration: 0.3, ease: "easeInOut", delay: 0.5 }}
-        className="w-full absolute bottom-0 left-0 h-1 bg-lime-500 block"
+        className="w-full absolute bottom-0 left-0 h-1 bg-[#14b8a6] block"
       />
       <Typewriter texts={texts} />
     </h1>
@@ -76,7 +76,7 @@ const Typewriter = ({ texts }: TypewriterProps) => {
     <span className="inline-block">
       <span className="text-primary">{currentText}</span>
       <span
-        className={`inline-block w-0.5 h-16 bg-lime-500 ml-1 text-primary ${
+        className={`inline-block w-0.5 h-16 bg-[#14b8a6] ml-1 text-primary ${
           showCursor ? "opacity-100" : "opacity-0"
         } transition-opacity duration-100`}
       />
