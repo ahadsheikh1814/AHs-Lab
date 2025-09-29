@@ -194,7 +194,7 @@ const Nav = () => {
               animate="enter"
               exit="exit"
               initial="initial"
-              className="flex flex-col gap-[1px]"
+              className="flex flex-col gap-[10px]"
             >
               <Link
                 href={itm.href}
