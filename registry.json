@@ -60,6 +60,21 @@
           "target": "components/AHs/BentoHoverEffect.tsx"
         }
       ]
+    },{
+      "name": "AnimatedMenubar",
+      "type": "registry:component",
+      "title": "Animated Menubar",
+      "description": "Animated and cool Menubar effect with animated dropdown",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "resistry/AnimatedMenubar.tsx",
+          "type": "registry:component",
+          "target": "components/AHs/AnimatedMenubar.tsx"
+        }
+      ]
     }
   ]
 }
