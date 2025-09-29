@@ -2,9 +2,10 @@ import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 import {IconLayoutDashboardFilled} from "@tabler/icons-react"
 
 
-export function baseOptions(): BaseLayoutProps {
+export function baseOptions({ navbar }: { navbar?: React.ReactNode } = {}): BaseLayoutProps {
   return {
     nav: {
+      component: navbar,
       title: (
         <div className='flex justify-center items-center'>
           <h1 className='h-10 w-10 dark:text-white text-neutral-800'>
@@ -14,13 +15,13 @@ export function baseOptions(): BaseLayoutProps {
         </div>
       ),
       transparentMode: 'top',
-      enabled:true
+      enabled: true
     },
-    links:[
-        {
-          text:"Templetes",
-          url:"/templets"
-        }
-      ]
+    links: [
+      {
+        text: "Templetes",
+        url: "/templets"
+      }
+    ]
   };
 }

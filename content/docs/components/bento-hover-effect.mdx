@@ -1,0 +1,315 @@
+---
+title: Bento Hover Effect
+description: Animated and cool hover effect for bento grids.
+icon: SquareMousePointer
+---
+import BentoHoverEffect from "@/resistry/BentoHoverEffect";
+
+## Introduction
+
+A typewriter effect component for displaying animated text.
+
+## Demo
+<Preview link="BentoHoverEffect">
+<BentoHoverEffect
+        cards={[
+          {
+            label: "(Html)",
+            color:
+              "radial-gradient(circle, #f16529 0%, #e44d26 50%, transparent 100%)",
+          },
+          {
+            label: "(Css)",
+            color:
+              "radial-gradient(circle, #2965f1 0%, #264de4 50%, transparent 100%)",
+          },
+          {
+            label: "(Js)",
+            color:
+              "radial-gradient(circle, #f0db4f 0%, #e5c000 50%, transparent 100%)",
+          },
+          {
+            label: "(React)",
+            color:
+              "radial-gradient(circle, #61dafb 0%, #21a1f1 50%, transparent 100%)",
+          },
+          {
+            label: "(Next)",
+            color:
+              "radial-gradient(circle, #000 0%, #333 50%, transparent 100%)",
+          },
+          {
+            label: "(Gsap)",
+            color:
+              "radial-gradient(circle, #88ce02 0%, #59b300 50%, transparent 100%)",
+          },
+          {
+            label: "(Motion)",
+            color:
+              "radial-gradient(circle, #f97316 0%, #f43f05 50%, transparent 100%)",
+          },
+          
+        ]}
+      />
+</Preview>
+
+## Installation
+To install the AI Input component, you can use npm or yarn. Run one of the following commands in your project directory:
+
+```npm
+npx shadcn@latest add https://ahs-lab.vercel.app/r/BentoHoverEffect.json
+```
+
+## usage
+
+pass the text or item and a color as **props**.
+
+```tsx
+<BentoHoverEffect
+        cards={[
+          {
+            label: "(Html)",
+            color:
+              "radial-gradient(circle, #f16529 0%, #e44d26 50%, transparent 100%)",
+          },
+          {
+            label: "(Css)",
+            color:
+              "radial-gradient(circle, #2965f1 0%, #264de4 50%, transparent 100%)",
+          },
+          {
+            label: "(Js)",
+            color:
+              "radial-gradient(circle, #f0db4f 0%, #e5c000 50%, transparent 100%)",
+          },
+          {
+            label: "(React)",
+            color:
+              "radial-gradient(circle, #61dafb 0%, #21a1f1 50%, transparent 100%)",
+          },
+          {
+            label: "(Next)",
+            color:
+              "radial-gradient(circle, #000 0%, #333 50%, transparent 100%)",
+          },
+          {
+            label: "(Gsap)",
+            color:
+              "radial-gradient(circle, #88ce02 0%, #59b300 50%, transparent 100%)",
+          },
+          {
+            label: "(Motion)",
+            color:
+              "radial-gradient(circle, #f97316 0%, #f43f05 50%, transparent 100%)",
+          },
+          {
+            label: "(Scrolltrigger)",
+            color:
+              "radial-gradient(circle, #8b5cf6 0%, #7c3aed 50%, transparent 100%)",
+          },
+        ]}
+      />
+```
+
+# OR
+
+## Code
+```tsx tab="tsx"
+"use client";
+
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+
+interface Card {
+  label: string;
+  color: string; // any CSS background, e.g., gradient or color
+}
+
+interface BentoHoverEffectProps {
+  cards: Card[];
+}
+
+const BentoHoverEffect: React.FC<BentoHoverEffectProps> = ({ cards }) => {
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>, index: number) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMousePosition({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+    setHoveredCard(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredCard(null);
+  };
+
+  const renderCard = (cardIndex: number) => (
+    <>
+      {hoveredCard === cardIndex && (
+        <motion.div
+          className="absolute pointer-events-none rounded-full blur-2xl"
+          animate={{
+            x: mousePosition.x - 150,
+            y: mousePosition.y - 150,
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 400,
+            damping: 35,
+          }}
+          style={{
+            width: 300,
+            height: 300,
+          }}
+        >
+          <motion.div
+            className="w-full h-full rounded-full"
+            style={{ background: cards[cardIndex].color }}
+          />
+        </motion.div>
+      )}
+      <p className="uppercase text-[13px] font-medium text-[#111] dark:text-white relative z-10">
+        {cards[cardIndex].label}
+      </p>
+    </>
+  );
+
+  return (
+    <div className="font-mono relative w-screen h-[50vh] flex justify-center items-center">
+      <div className="flex flex-col relative my-0 mx-auto w-[90%] h-[90%] border-[1px] dark:border-[rgba(255,255,255,0.2)] border-neutral-400">
+        <div className="flex-1 flex flex-col md:flex-row justify-center items-center h-full border-b dark:border-[rgba(255,255,255,0.2)] border-neutral-400">
+          {cards.slice(0, 3).map((_, i) => (
+            <div
+              key={i}
+              className={`md:flex-1 flex justify-center items-center h-full w-full ${
+                i < 2 ? "border-b md:border-r" : "border-b"
+              } dark:border-[rgba(255,255,255,0.2)] border-neutral-400 relative overflow-hidden`}
+              onMouseMove={(e) => handleMouseMove(e, i)}
+              onMouseLeave={handleMouseLeave}
+            >
+              {renderCard(i)}
+            </div>
+          ))}
+        </div>
+        <div className="flex-1 flex justify-center items-center h-full flex-col md:flex-row">
+          {cards.slice(3).map((_, i) => {
+            const index = i + 3;
+            return (
+              <div
+                key={index}
+                className={`md:flex-1 flex justify-center items-center h-full w-full ${
+                  index < cards.length - 1 ? "border-b md:border-r" : ""
+                } dark:border-[rgba(255,255,255,0.2)] border-neutral-400 relative overflow-hidden`}
+                onMouseMove={(e) => handleMouseMove(e, index)}
+                onMouseLeave={handleMouseLeave}
+              >
+                {renderCard(index)}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default BentoHoverEffect;
+```
+```jsx tab="jsx"
+"use client";
+
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+
+const BentoHoverEffect = ({ cards }) => {
+  const [hoveredCard, setHoveredCard] = useState(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e, index) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMousePosition({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+    setHoveredCard(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredCard(null);
+  };
+
+  const renderCard = (cardIndex) => (
+    <>
+      {hoveredCard === cardIndex && (
+        <motion.div
+          className="absolute pointer-events-none rounded-full blur-2xl"
+          animate={{
+            x: mousePosition.x - 150,
+            y: mousePosition.y - 150,
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 400,
+            damping: 35,
+          }}
+          style={{
+            width: 300,
+            height: 300,
+          }}
+        >
+          <motion.div
+            className="w-full h-full rounded-full"
+            style={{ background: cards[cardIndex].color }}
+          />
+        </motion.div>
+      )}
+      <p className="uppercase text-[13px] font-medium text-[#111] dark:text-white relative z-10">
+        {cards[cardIndex].label}
+      </p>
+    </>
+  );
+
+  return (
+    <div className="font-mono relative w-screen h-[50vh] flex justify-center items-center">
+      <div className="flex flex-col relative my-0 mx-auto w-[90%] h-[90%] border-[1px] dark:border-[rgba(255,255,255,0.2)] border-neutral-400">
+        <div className="flex-1 flex flex-col md:flex-row justify-center items-center h-full border-b dark:border-[rgba(255,255,255,0.2)] border-neutral-400">
+          {cards.slice(0, 3).map((_, i) => (
+            <div
+              key={i}
+              className={`md:flex-1 flex justify-center items-center h-full w-full ${
+                i < 2 ? "border-b md:border-r" : "border-b"
+              } dark:border-[rgba(255,255,255,0.2)] border-neutral-400 relative overflow-hidden`}
+              onMouseMove={(e) => handleMouseMove(e, i)}
+              onMouseLeave={handleMouseLeave}
+            >
+              {renderCard(i)}
+            </div>
+          ))}
+        </div>
+        <div className="flex-1 flex justify-center items-center h-full flex-col md:flex-row">
+          {cards.slice(3).map((_, i) => {
+            const index = i + 3;
+            return (
+              <div
+                key={index}
+                className={`md:flex-1 flex justify-center items-center h-full w-full ${
+                  index < cards.length - 1 ? "border-b md:border-r" : ""
+                } dark:border-[rgba(255,255,255,0.2)] border-neutral-400 relative overflow-hidden`}
+                onMouseMove={(e) => handleMouseMove(e, index)}
+                onMouseLeave={handleMouseLeave}
+              >
+                {renderCard(index)}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default BentoHoverEffect;
+```

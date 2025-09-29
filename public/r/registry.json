@@ -7,7 +7,7 @@
       "name": "AI-Input",
       "type": "registry:component",
       "title": "AI Input",
-      "description": "An input component with AI capabilities.",
+      "description": "Modern AI chat interface components",
       "files": [
         {
           "path": "resistry/Ai-Inputs.tsx",
@@ -28,6 +28,36 @@
           "path": "resistry/TypeWriterEffect.tsx",
           "type": "registry:component",
           "target": "components/AHs/TypeWriterEffect.tsx"
+        }
+      ]
+    },{
+      "name": "Buttons",
+      "type": "registry:component",
+      "title": "AHs Buttons",
+      "description": "Animated and cool buttons.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "resistry/Buttons.tsx",
+          "type": "registry:component",
+          "target": "components/AHs/Buttons.tsx"
+        }
+      ]
+    },{
+      "name": "BentoHoverEffect",
+      "type": "registry:component",
+      "title": "Bento Hover Effect",
+      "description": "Animated and cool hover effect for bento grids.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "resistry/BentoHoverEffect.tsx",
+          "type": "registry:component",
+          "target": "components/AHs/BentoHoverEffect.tsx"
         }
       ]
     }

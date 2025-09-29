@@ -19,6 +19,6 @@
     "hooks": "@/hooks"
   },
   "registries": {
-    "@AHs_Lab":"https://ahs-lab.vercel.app/r/{name}.json"
+    "@AHs Lab":"https://ahs-lab.vercel.app/r/{name}.json"
   }
 }

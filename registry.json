@@ -45,6 +45,21 @@
           "target": "components/AHs/Buttons.tsx"
         }
       ]
+    },{
+      "name": "BentoHoverEffect",
+      "type": "registry:component",
+      "title": "Bento Hover Effect",
+      "description": "Animated and cool hover effect for bento grids.",
+      "dependencies": [
+        "motion"
+      ],
+      "files": [
+        {
+          "path": "resistry/BentoHoverEffect.tsx",
+          "type": "registry:component",
+          "target": "components/AHs/BentoHoverEffect.tsx"
+        }
+      ]
     }
   ]
 }
