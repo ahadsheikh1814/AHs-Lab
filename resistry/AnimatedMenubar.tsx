@@ -48,7 +48,7 @@ const NavFooterLinks = [
 const Header = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
   return (
-    <header className="fixed top-[50px] right-[50px]">
+    <header className="sticky top-[50px] right-[50px]">
       <Menu isActive={isActive} />
       <div
         onClick={() => setIsActive(!isActive)}
