@@ -75,6 +75,21 @@
           "target": "components/AHs/AnimatedMenubar.tsx"
         }
       ]
+    },{
+      "name": "HoverDepthCard",
+      "type": "registry:component",
+      "title": "Hover Depth Card",
+      "description": "A 3D hover-enabled card with perspective transform, depth motion, and dark mode support. Perfect for showcasing avatars, product previews, or feature highlights with interactive flair.",
+      "dependencies": [
+        "motion","@tabler/icons"
+      ],
+      "files": [
+        {
+          "path": "resistry/HoverDepthCard.tsx",
+          "type": "registry:component",
+          "target": "components/AHs/HoverDepthCard.tsx"
+        }
+      ]
     }
   ]
 }
