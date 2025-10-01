@@ -23,7 +23,7 @@ const TempleteHeading = () => {
       {/* Your Actual Content */}
       <div className="absolute flex justify-center items-center gap-2 w-full flex-col -top-10 z-10 text-center py-20">
         <h1 className="text-4xl font-medium tracking-tighte">Templates</h1>
-        <p className="text-gray-800 dark:text-gray-100 mt-4 text-lg w-1/2 text-balance font-normal">
+        <p className="text-gray-800 dark:text-gray-100 md:mt-4 md:text-lg text-sm md:w-1/2 w-full text-balance font-normal">
           Modern, minimalist templates to kickstart your next product — built with React, Next.js, TailwindCSS, Framer Motion, and TypeScript.
         </p>
       </div>
