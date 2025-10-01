@@ -15,14 +15,13 @@
           "target": "components/AHs/Ai-Input.tsx"
         }
       ]
-    },{
+    },
+    {
       "name": "TypeWriterEffect",
       "type": "registry:component",
       "title": "Type Writer Effect",
       "description": "A typewriter effect component for displaying animated text.",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "resistry/TypeWriterEffect.tsx",
@@ -30,14 +29,13 @@
           "target": "components/AHs/TypeWriterEffect.tsx"
         }
       ]
-    },{
+    },
+    {
       "name": "Buttons",
       "type": "registry:component",
       "title": "AHs Buttons",
       "description": "Animated and cool buttons.",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "resistry/Buttons.tsx",
@@ -45,14 +43,13 @@
           "target": "components/AHs/Buttons.tsx"
         }
       ]
-    },{
+    },
+    {
       "name": "BentoHoverEffect",
       "type": "registry:component",
       "title": "Bento Hover Effect",
       "description": "Animated and cool hover effect for bento grids.",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "resistry/BentoHoverEffect.tsx",
@@ -60,14 +57,13 @@
           "target": "components/AHs/BentoHoverEffect.tsx"
         }
       ]
-    },{
+    },
+    {
       "name": "AnimatedMenubar",
       "type": "registry:component",
       "title": "Animated Menubar",
       "description": "Animated and cool Menubar effect with animated dropdown",
-      "dependencies": [
-        "motion"
-      ],
+      "dependencies": ["motion"],
       "files": [
         {
           "path": "resistry/AnimatedMenubar.tsx",
@@ -75,19 +71,31 @@
           "target": "components/AHs/AnimatedMenubar.tsx"
         }
       ]
-    },{
+    },
+    {
       "name": "HoverDepthCard",
       "type": "registry:component",
       "title": "Hover Depth Card",
       "description": "A 3D hover-enabled card with perspective transform, depth motion, and dark mode support. Perfect for showcasing avatars, product previews, or feature highlights with interactive flair.",
-      "dependencies": [
-        "motion","@tabler/icons"
-      ],
+      "dependencies": ["motion", "@tabler/icons"],
       "files": [
         {
           "path": "resistry/HoverDepthCard.tsx",
           "type": "registry:component",
           "target": "components/AHs/HoverDepthCard.tsx"
+        }
+      ]
+    },
+    {
+      "name": "Navigation_01",
+      "type": "registry:block",
+      "title": "Navigation_01",
+      "description": "Navigation_01 is a responsive, animated React navigation bar with expandable dropdowns, scroll-aware shrinking, staggered item animations, and customizable glassmorphic styling",
+      "files": [
+        {
+          "path": "resistry/blocs/navigations/Navigation_01.tsx",
+          "type": "registry:component",
+          "target": "components/Lab/Navigation_01.tsx"
         }
       ]
     }

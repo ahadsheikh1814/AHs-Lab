@@ -1,14 +1,12 @@
 "use client";
 import { motion } from "motion/react";
-import React, { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import React from "react";
 import H1 from "../H1";
 import P from "../P";
 import { Button } from "../ui/button";
 import Link from "next/link";
 
 const Hero = () => {
-  const router = useRouter();
   return (
     <div className="relative overflow-hidden w-full">
       <div className="h-[50vh] w-full relative overflow-hidden">

@@ -1,0 +1,64 @@
+---
+title: Components
+icon: Target
+---
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+Welcome to the documentation for AHs UI Lab. This guide will help you get started and use the components effectively.
+
+## shadcn UI
+```npm
+npx shadcn@latest init
+```
+
+## Next.js
+
+This project uses Next.js for building modern React applications.
+
+## Tailwind CSS
+
+All styling is done with Tailwind CSS.
+
+To install Tailwind CSS, run:
+
+<Steps>
+<Step>
+```npm
+npm install tailwindcss @tailwindcss/postcss postcss
+```
+
+</Step>
+<Step>
+Then configure PostCSS plugins in postcss.config.mjs:
+
+```js
+const config = {
+  plugins: {
+    "@tailwindcss/postcss": {},
+  },
+};
+export default config;
+```
+</Step>
+<Step>
+Import Tailwind CSS in your global stylesheet **globals.css**:
+
+```css
+@import "tailwindcss";
+```
+</Step>
+<Step>
+Now you can use Tailwind classes in your components, for example:
+
+```tsx
+export default function Home() {
+  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+}
+```
+</Step>
+</Steps>
+## Motion
+Motion is used for animations in UI components. Refer to the component documentation for usage examples.
+```npm
+npm i motion
+```

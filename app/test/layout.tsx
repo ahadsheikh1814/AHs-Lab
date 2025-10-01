@@ -1,6 +1,6 @@
-import Container from "@/components/layout/Container";
+// import Container from "@/components/layout/Container";
 import React from "react";
-import Navbar from "@/components/layout/Navbar";
+// import Navbar from "@/components/layout/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const Root_layout = ({ children }: { children: React.ReactNode }) => {
@@ -11,10 +11,10 @@ const Root_layout = ({ children }: { children: React.ReactNode }) => {
       enableSystem
       disableTransitionOnChange
     >
-      <Container>
-        <Navbar />
+      {/* <Container> */}
+        {/* <Navbar /> */}
         {children}
-      </Container>
+      {/* </Container> */}
     </ThemeProvider>
   );
 };

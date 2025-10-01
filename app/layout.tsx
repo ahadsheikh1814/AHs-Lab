@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   description:
     "AHs Lab is a collection of prebuilt, customizable, and developer-friendly UI components designed to help you cut boilerplate and ship faster.",
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
+    icon: "/AHs.ico",
+    shortcut: "/AHs.ico",
   },
 };
 

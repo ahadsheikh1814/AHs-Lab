@@ -4,7 +4,6 @@ import {
   IconBrandX,
   IconLayoutDashboardFilled,
 } from "@tabler/icons-react";
-import { Github } from "lucide-react";
 
 export function baseOptions({
   navbar,

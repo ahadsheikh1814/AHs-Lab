@@ -11,15 +11,21 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="w-full h-full sticky top-0 backdrop-blur-2xl flex items-center justify-between py-4 px-6 z-50">
+      <nav className="w-full h-full sticky top-0 backdrop-blur-2xl flex items-center justify-between py-4  z-50">
         <div className="flex items-center gap-10">
           <Logo />
-          <div className="hidden md:block">
+          <div className="hidden md:flex gap-3">
             <Link
               href={"/docs"}
               className="text-primary/90 hover:text-primary text-sm font-medium"
             >
               Components
+            </Link>
+            <Link
+              href={"/templates"}
+              className="text-primary/90 hover:text-primary text-sm font-medium"
+            >
+              Templates
             </Link>
           </div>
         </div>
@@ -76,6 +82,13 @@ const MobileNav: React.FC<MobileNavProps> = ({ onClose }) => {
           className="text-primary text-lg font-medium"
         >
           Components
+        </Link>
+        <Link
+          href={"/templates"}
+          onClick={onClose}
+          className="text-primary text-lg font-medium"
+        >
+          Templates
         </Link>
         <a
           href="https://x.com/AhadSheikh1814_"

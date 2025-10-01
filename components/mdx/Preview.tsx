@@ -51,7 +51,7 @@ export function Preview({
             className={cn(
               "p-2 md:p-8 flex justify-center items-center relative border rounded-2xl my-4 border-zinc-400 dark:border-zinc-800 not-prose",
               compact ? "min-h-[100px]" : "min-h-[400px]",
-              isBlock ? "md:p-0" : ""
+              isBlock ? "md:p-0 w-screen min-h-screen" : ""
             )}
           >
             {children}

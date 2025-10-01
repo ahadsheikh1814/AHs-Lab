@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import 'fumadocs-ui/css/ocean.css';
+@import 'fumadocs-ui/css/black.css';
 @import 'fumadocs-ui/css/preset.css';
 @import "tw-animate-css";
 
@@ -42,7 +42,8 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   /* AHs color */
-  --color-ahs: #14b8a6
+  --color-ahs: #14b8a6;
+  --shadow-ahs:0px 2px 3px -1px rgba(0,0,0,0.1),0px 1px 0px 0px rgba(23,28,33,0.02),0px 0px 0px 1px rgba(25,28,33,0.08);
 }
 
 :root {
