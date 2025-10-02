@@ -1,6 +1,6 @@
 # AHs Lab – UI Components for Developers
 
-![AHs Lab Logo](https://ahs-lab.vercel.app/logo.png)  
+![AHs Lab Logo](https://ahs-lab.vercel.app/AHs.png)  
 *Build UIs faster with prebuilt, customizable, and developer-friendly components.*
 
 ---

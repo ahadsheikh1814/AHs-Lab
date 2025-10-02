@@ -26,8 +26,8 @@ export function baseOptions({
     },
     links: [
       {
-        text: "Templetes",
-        url: "/templets",
+        text: "Templates",
+        url: "/templates",
       },
       {
         type: "icon",
