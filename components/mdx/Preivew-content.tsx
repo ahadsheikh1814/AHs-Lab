@@ -24,15 +24,15 @@ export default function PreviewContent({
   prePath: string;
   isBlock?: boolean;
 }) {
-  const [isPending, startTransition] = useTransition();
+  const [, startTransition] = useTransition();
   const [state, formAction] = useActionState(copyComponent, {
     error: "",
     content: "",
     success: false,
   });
-  const [showLoginDialog, setShowLoginDialog] = useState(false);
+  const [, setShowLoginDialog] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
+  const [, setIsHovered] = useState(false);
   const [isTerminalCopied, setIsTerminalCopied] = useState(false);
 
   const handleCopyClick = async () => {
