@@ -31,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <meta name="google-site-verification" content="f8sGcHre4r-fcTDQVnnND06gJ2Cm0ji45B0bkNdbKw4" />
         <script src="https://analytics.ahrefs.com/analytics.js" data-key="30Lno/g3E8Kntz1N4m8amA" async></script>
       </head>
       <body
