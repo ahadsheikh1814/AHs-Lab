@@ -3,6 +3,16 @@
 @import 'fumadocs-ui/css/preset.css';
 @import "tw-animate-css";
 
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -82,7 +92,7 @@
 }
 
 .dark {
-  --background: #09090b;
+  --background: #080808;
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);

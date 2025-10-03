@@ -93,9 +93,21 @@
       "description": "Navigation_01 is a responsive, animated React navigation bar with expandable dropdowns, scroll-aware shrinking, staggered item animations, and customizable glassmorphic styling",
       "files": [
         {
-          "path": "resistry/blocs/navigations/Navigation_01.tsx",
+          "path": "resistry/blocks/navigations/Navigation_01.tsx",
           "type": "registry:component",
           "target": "components/Lab/Navigation_01.tsx"
+        }
+      ]
+    },{
+      "name": "Navigation_02",
+      "type": "registry:block",
+      "title": "Navigation_02",
+      "description": "Navigation_02 is a responsive, animated React navigation bar with expandable dropdowns, scroll-aware shrinking, staggered item animations, and customizable glassmorphic styling",
+      "files": [
+        {
+          "path": "resistry/blocks/navigations/Navigation_02.tsx",
+          "type": "registry:component",
+          "target": "components/Lab/Navigation_02.tsx"
         }
       ]
     }

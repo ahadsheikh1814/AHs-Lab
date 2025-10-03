@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { IconBrandUnity } from "@tabler/icons-react";
+import Image from "next/image";
 import React from "react";
 
 interface HoverDepthCardProps {
@@ -38,9 +39,11 @@ const HoverDepthCard = ({
             "transition-all duration-200"
           )}
         >
-          <img
+          <Image
             src={imageSrc}
             alt="avatar"
+            width={600}
+            height={600}
             className={cn(
               "h-full w-full rounded-2xl object-cover object-top-left",
               "transform rotate-x-30  -rotate-y-20 translate-z-30",

@@ -1,10 +1,10 @@
-import Navigation_01 from "@/resistry/blocs/navigations/Navigation_01";
+import Navigation_02 from "@/resistry/blocks/navigations/Navigation_02";
 import React from "react";
 
 const Test = () => {
   return (
     <div className="h-[300vh] w-full">
-      <Navigation_01/>
+      <Navigation_02/>
     </div>
   );
 };

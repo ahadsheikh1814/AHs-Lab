@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { motion } from "motion/react";
 
 interface Card {
-  label: string;
+  label: React.ReactElement | string;
   color: string; // any CSS background, e.g., gradient or color
 }
 
@@ -54,9 +54,9 @@ const BentoHoverEffect: React.FC<BentoHoverEffectProps> = ({ cards }) => {
           />
         </motion.div>
       )}
-      <p className="uppercase text-[13px] font-medium text-[#111] dark:text-white relative z-10">
+      <div className="uppercase text-[13px] font-medium text-[#111] dark:text-white relative z-10">
         {cards[cardIndex].label}
-      </p>
+      </div>
     </>
   );
 
