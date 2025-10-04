@@ -1,8 +1,8 @@
 "use client";
 import { motion } from "motion/react";
 import React from "react";
-import H1 from "../H1";
-import P from "../P";
+import H1 from "../typography/H1";
+import P from "../typography/P";
 import { Button } from "../ui/button";
 import Link from "next/link";
 

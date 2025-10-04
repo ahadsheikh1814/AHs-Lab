@@ -8,7 +8,7 @@ import {
   ButtonSimple,
 } from "@/resistry/Buttons";
 import { MoveRightIcon } from "lucide-react";
-import H1 from "../H1";
+import H1 from "../typography/H1";
 import HoverDepthCard from "@/resistry/HoverDepthCard";
 
 const ComponentsPreview = () => {

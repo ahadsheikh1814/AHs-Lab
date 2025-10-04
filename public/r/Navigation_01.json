@@ -4,6 +4,10 @@
   "type": "registry:block",
   "title": "Navigation_01",
   "description": "Navigation_01 is a responsive, animated React navigation bar with expandable dropdowns, scroll-aware shrinking, staggered item animations, and customizable glassmorphic styling",
+  "dependencies": [
+    "motion",
+    "@tabler/icons"
+  ],
   "files": [
     {
       "path": "resistry/blocks/navigations/Navigation_01.tsx",

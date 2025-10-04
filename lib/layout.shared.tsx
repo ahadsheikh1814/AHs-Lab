@@ -30,6 +30,10 @@ export function baseOptions({
         url: "/templates",
       },
       {
+        text: "Blocks",
+        url: "/blocks",
+      },
+      {
         type: "icon",
         icon: <IconBrandX />,
         url: "https://x.com/AhadSheikh1814_",

@@ -1,10 +1,4 @@
-import Container from '@/components/layout/Container';
-import React from 'react'
-
-const Blocks = () => {
-    const blocks = Array.from({ length: 200 });
-  return (
-    <Container>
+<Light/>
         <div className="relative w-full">
       {/* Background Grid */}
       <div className=" mx-auto h-[25vh] max-w-7xl overflow-hidden px-4 pt-10 pb-4 sm:px-6 md:pt-10 md:pb-20 lg:px-8">
@@ -28,10 +22,4 @@ const Blocks = () => {
           Modern, minimalist blocks to kickstart your next product — built with React, Next.js, TailwindCSS, Framer Motion, and TypeScript.
         </p>
       </div>
-      
     </div>
-    </Container>
-  )
-}
-
-export default Blocks

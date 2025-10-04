@@ -11,7 +11,7 @@ const Container = ({
   return (
     <main
       className={cn(
-        "min-h-screen max-w-7xl mx-auto overflow-hidden",
+        "min-h-screen max-w-7xl mx-auto overflow-hidden relative",
         className
       )}
     >

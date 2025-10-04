@@ -1,4 +1,4 @@
-import { FumadocsProviderClient } from "@/components/FumadocsProviderClient";
+import { FumadocsProviderClient } from "@/components/providers/FumadocsProviderClient";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";

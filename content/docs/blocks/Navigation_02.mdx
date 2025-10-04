@@ -1,3 +1,31 @@
+---
+title: Simple Navbar
+description: A clean and minimal navigation bar component built for modern web apps. It provides a straightforward menu layout with responsive styling, intuitive access to key pages, and flexible integration. Great for use as a lightweight header navigation that focuses on content and clarity.
+icon: Navigation
+---
+
+
+import { PreviewFull } from '@/components/mdx/PreviewFull';
+
+
+## demo
+
+<PreviewFull
+    link='Navigation_01'
+    comment={['Motion','Tailwind','Tabler']}
+/>
+
+## Instaletion
+
+```npm
+npx shadcn@latest add https://ahs-lab.vercel.app/r/Navigation_01.json
+```
+
+# Or,
+
+## code
+
+```tsx tab="tsx"
 "use client";
 import { cn } from "@/lib/utils";
 import {
@@ -402,8 +430,354 @@ const ExpandElementWrapper: React.FC<ExpandElementWrapperProps> = ({
 const Logo: React.FC = () => {
   return (
     <div className="text-xl font-bold flex items-center gap-2 cursor-pointer max-sm:text-lg">
-      <IconLayoutDashboardFilled className="text-ahs max-sm:size-5" />
+      <IconLayoutDashboardFilled className="text-[#14b8a6] max-sm:size-5" />
       <h1 className="text-primary/85">AHs Lab</h1>
     </div>
   );
 };
+```
+```jsx tab='jsx'
+"use client";
+import { cn } from "@/lib/utils";
+import {
+  Icon12Hours,
+  Icon2fa,
+  Icon360,
+  Icon3dCubeSphereOff,
+  IconAi,
+  IconArrowDown,
+  IconClock12,
+  IconCrop169Filled,
+  IconDice1Filled,
+  IconH1,
+  IconInfoSquare,
+  IconLayoutDashboardFilled,
+  IconWifi1,
+  IconMenu2,
+  IconX,
+} from "@tabler/icons-react";
+import Link from "next/link";
+import React, { useRef, useState } from "react";
+import {
+  AnimatePresence,
+  motion,
+  useMotionValueEvent,
+  useScroll,
+} from "motion/react";
+
+const NavItems = [
+  {
+    title: "products",
+    href: "#",
+    isExpand: true,
+    isExpandElem: [
+      {
+        title: "Lightning Fast",
+        description: "Experience ultra-responsive performance.",
+        icon: <Icon12Hours />,
+      },
+      {
+        title: "Future Ready",
+        description: "Designed to adapt and scale with your needs.",
+        icon: <Icon360 />,
+      },
+      {
+        title: "Auto Backup",
+        description: "Never lose your progress — everything is saved.",
+        icon: <IconH1 />,
+      },
+      {
+        title: "One-Click Setup",
+        description: "Start instantly without wasting time on configs.",
+        icon: <Icon3dCubeSphereOff />,
+      },
+      {
+        title: "Cloud Connected",
+        description: "Access your data from anywhere, anytime.",
+        icon: <IconDice1Filled />,
+      },
+      {
+        title: "Customizable",
+        description: "Tune every detail to match your workflow.",
+        icon: <IconWifi1 />,
+      },
+      {
+        title: "Collaboration Ready",
+        description: "Work together with your team in real time.",
+        icon: <Icon2fa />,
+      },
+    ],
+  },
+  {
+    title: "solutions",
+    href: "#",
+    isExpand: true,
+    isExpandElem: [
+      {
+        title: "AI Powered",
+        description: "Let artificial intelligence do the heavy lifting.",
+        icon: <IconClock12 />,
+      },
+      {
+        title: "Lightning Fast",
+        description: "Experience ultra-responsive performance.",
+        icon: <IconAi />,
+      },
+      {
+        title: "Cloud Connected",
+        description: "Access everything from anywhere, instantly.",
+        icon: <IconInfoSquare />,
+      },
+      {
+        title: "Secure by Design",
+        description: "Your data stays private with end-to-end protection.",
+        icon: <IconCrop169Filled />,
+      },
+    ],
+  },
+  {
+    title: "pricing",
+    href: "#",
+  },
+  {
+    title: "company",
+    href: "#",
+  },
+];
+
+const Navigation_01 = () => {
+  const [activeItem, setActiveItem] = useState(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const closeTimerRef = useRef(null);
+  const [scrolled, setScroll] = useState(false);
+
+  const clearCloseTimer = () => {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+  };
+
+  const scheduleClose = (delay = 150) => {
+    clearCloseTimer();
+    closeTimerRef.current = setTimeout(() => {
+      setActiveItem(null);
+      closeTimerRef.current = null;
+    }, delay);
+  };
+
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setScroll(latest > 20);
+  });
+
+  return (
+    <motion.header
+      initial={{
+        width: "100%",
+        y: "0px",
+        paddingLeft: "13vw",
+        paddingRight: "13vw",
+      }}
+      animate={{
+        width: scrolled ? "70%" : "100%",
+        borderRadius: scrolled ? "15px" : "0px",
+        y: scrolled ? "15px" : "0px",
+        paddingLeft: scrolled ? "20px" : "13vw",
+        paddingRight: scrolled ? "20px" : "13vw",
+      }}
+      transition={{
+        duration: 0.3,
+        ease: [0.4, 0, 0.2, 1],
+      }}
+      className={cn(
+        "bg-background min-h-12 py-3 flex flex-col sticky top-0 mx-auto",
+        `${scrolled ? "shadow-ahs" : "border-b border-primary/20"}`,
+        "transition-all duration-100 [transition-timing-function:cubic-bezier(.4, 0, .2, 1)]",
+        "max-md:!w-full max-md:!px-5 max-md:!rounded-none"
+      )}
+    >
+      <nav className="flex items-center justify-between w-full">
+        <div className="flex gap-10 items-center max-lg:gap-5">
+          <Logo />
+          <div className="hidden lg:flex gap-10 items-center">
+            {NavItems.map((itm) => (
+              <div key={itm.title}>
+                {itm.isExpand ? (
+                  <div
+                    onMouseEnter={() => {
+                      clearCloseTimer();
+                      setActiveItem(itm.title);
+                    }}
+                    onMouseLeave={() => scheduleClose()}
+                    className="capitalize cursor-pointer hover:text-primary/70 transition-colors"
+                  >
+                    <h1 className="flex items-center gap-1">
+                      {itm.title}
+                      <span>
+                        <IconArrowDown className="size-3 text-primary/50" />
+                      </span>
+                    </h1>
+                  </div>
+                ) : (
+                  <Link
+                    href={itm.href}
+                    className="capitalize cursor-pointer hover:text-primary/70 transition-colors"
+                  >
+                    <h1>{itm.title}</h1>
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="hidden md:flex gap-3 items-center">
+          <button className="py-2 px-4 rounded-md border-primary/20 cursor-pointer border-[.5px] text-primary">
+            Login
+          </button>
+          <button className="bg-purple-600 text-white hover:bg-purple-700 py-2 px-4 rounded-md cursor-pointer">
+            Sign Up
+          </button>
+        </div>
+
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="lg:hidden p-2 text-primary"
+        >
+          {mobileMenuOpen ? <IconX size={24} /> : <IconMenu2 size={24} />}
+        </button>
+      </nav>
+
+      <div className="relative hidden lg:block">
+        <AnimatePresence mode="wait">
+          {activeItem && (
+            <ExpandElementWrapper
+              key={activeItem}
+              activeItemTitle={activeItem}
+              onEnter={clearCloseTimer}
+              onLeave={() => scheduleClose()}
+            />
+          )}
+        </AnimatePresence>
+      </div>
+
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="lg:hidden overflow-hidden"
+          >
+            <div className="flex flex-col gap-4 pt-4 pb-2">
+              {NavItems.map((itm) => (
+                <div key={itm.title}>
+                  {itm.isExpand ? (
+                    <div>
+                      <h2 className="capitalize font-semibold text-primary/90 mb-2">
+                        {itm.title}
+                      </h2>
+                      <div className="flex flex-col gap-2 pl-4">
+                        {itm.isExpandElem?.map((elem, idx) => (
+                          <div
+                            key={idx}
+                            className="py-2 cursor-pointer hover:text-primary/70"
+                          >
+                            <div className="flex items-center gap-2">
+                              <div className="text-primary/60">{elem.icon}</div>
+                              <span className="text-sm">{elem.title}</span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <Link
+                      href={itm.href}
+                      className="capitalize cursor-pointer hover:text-primary/70 block py-2"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <h1>{itm.title}</h1>
+                    </Link>
+                  )}
+                </div>
+              ))}
+              <div className="flex flex-col gap-2 pt-2 border-t border-primary/20">
+                <button className="w-full py-2 px-4 rounded-md border-primary/20 cursor-pointer border-[.5px] text-primary">
+                  Login
+                </button>
+                <button className="w-full bg-purple-600 text-white hover:bg-purple-700 py-2 px-4 rounded-md cursor-pointer">
+                  Sign Up
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
+  );
+};
+
+export default Navigation_01;
+
+const ExpandElementWrapper = ({ activeItemTitle, onEnter, onLeave }) => {
+  const currentItem = NavItems.find((i) => i.title === activeItemTitle);
+
+  if (!currentItem?.isExpandElem) return null;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, height: 0 }}
+      animate={{ opacity: 1, height: "auto" }}
+      exit={{ opacity: 0, height: 0 }}
+      transition={{
+        duration: 0.3,
+        ease: [0.4, 0, 0.2, 1],
+        height: { duration: 0.25 },
+      }}
+      className="w-full overflow-hidden"
+      onMouseEnter={onEnter}
+      onMouseLeave={onLeave}
+    >
+      <motion.div
+        initial="hidden"
+        animate="show"
+        exit="hidden"
+        className="grid grid-cols-3 gap-4 pt-6 pb-4 bg-white/30 backdrop-blur-lg border border-white/20 rounded-xl shadow-lg max-xl:grid-cols-2 max-lg:grid-cols-1"
+      >
+        {currentItem.isExpandElem.map((elem, n) => (
+          <motion.div
+            key={n}
+            className="p-4 rounded-lg hover:bg-primary/5 transition-colors cursor-pointer group"
+          >
+            <div className="flex items-start gap-3">
+              <div className="text-primary/60 group-hover:text-primary transition-colors mt-1">
+                {elem.icon}
+              </div>
+              <div>
+                <h3 className="font-semibold text-primary/90 mb-1">
+                  {elem.title}
+                </h3>
+                <p className="text-sm text-primary/60">{elem.description}</p>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
+    </motion.div>
+  );
+};
+
+const Logo = () => {
+  return (
+    <div className="text-xl font-bold flex items-center gap-2 cursor-pointer max-sm:text-lg">
+      <IconLayoutDashboardFilled className="text-[#14b8a6] max-sm:size-5" />
+      <h1 className="text-primary/85">AHs Lab</h1>
+    </div>
+  );
+};
+
+```
