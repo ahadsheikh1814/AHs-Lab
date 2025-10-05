@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "AI-Input-compact",
+  "type": "registry:component",
+  "title": "AI Input compact",
+  "description": "Modern AI chat interface components",
+  "files": [
+    {
+      "path": "resistry/Ai-Input-compact.tsx",
+      "content": "import type React from \"react\"\r\n\r\nconst AiInputCompact: React.FC = () => {\r\n  return (\r\n    <div className=\"p-4 min-w-full\">\r\n      <div className=\"relative\">\r\n        <div className=\"relative flex items-center gap-2 border border-neutral-200 dark:border-neutral-800 rounded-lg bg-white dark:bg-neutral-900 px-3 py-2\">\r\n          <button\r\n            className=\"p-1.5 text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors rounded\"\r\n            aria-label=\"Attach file\"\r\n            type=\"button\"\r\n          >\r\n            <svg\r\n              className=\"w-4 h-4\"\r\n              strokeLinejoin=\"round\"\r\n              strokeLinecap=\"round\"\r\n              strokeWidth=\"2\"\r\n              stroke=\"currentColor\"\r\n              fill=\"none\"\r\n              viewBox=\"0 0 24 24\"\r\n            >\r\n              <path d=\"m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48\" />\r\n            </svg>\r\n          </button>\r\n          <input\r\n            type=\"text\"\r\n            className=\"flex-1 bg-transparent border-none focus:outline-none focus-visible:ring-0 placeholder:text-neutral-400 text-neutral-900 dark:text-white text-sm\"\r\n            placeholder=\"Type a message...\"\r\n          />\r\n          <button\r\n            className=\"p-1.5 text-blue-500 hover:text-blue-600 transition-colors rounded\"\r\n            aria-label=\"Send message\"\r\n            type=\"button\"\r\n          >\r\n            <svg\r\n              className=\"w-4 h-4\"\r\n              strokeLinejoin=\"round\"\r\n              strokeLinecap=\"round\"\r\n              strokeWidth=\"2\"\r\n              stroke=\"currentColor\"\r\n              fill=\"none\"\r\n              viewBox=\"0 0 24 24\"\r\n            >\r\n              <path d=\"m5 12 7-7 7 7\" />\r\n              <path d=\"M12 19V5\" />\r\n            </svg>\r\n          </button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default AiInputCompact",
+      "type": "registry:component",
+      "target": "components/AHs/Ai-Input-compact.tsx"
+    }
+  ]
+}

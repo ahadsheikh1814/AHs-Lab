@@ -4,15 +4,41 @@
   "homepage": "https://ahs-lab.vercel.app/",
   "items": [
     {
-      "name": "AI-Input",
+      "name": "AI-Input-Basic",
       "type": "registry:component",
-      "title": "AI Input",
+      "title": "AI Input Basic",
       "description": "Modern AI chat interface components",
       "files": [
         {
-          "path": "resistry/Ai-Inputs.tsx",
+          "path": "resistry/Ai-Input-basic.tsx",
           "type": "registry:component",
-          "target": "components/AHs/Ai-Input.tsx"
+          "target": "components/AHs/Ai-Input-basic.tsx"
+        }
+      ]
+    },
+    {
+      "name": "AI-Input-pill",
+      "type": "registry:component",
+      "title": "AI Input pill",
+      "description": "Modern AI chat interface components",
+      "files": [
+        {
+          "path": "resistry/Ai-Input-pill.tsx",
+          "type": "registry:component",
+          "target": "components/AHs/Ai-Input-pill.tsx"
+        }
+      ]
+    },
+    {
+      "name": "AI-Input-compact",
+      "type": "registry:component",
+      "title": "AI Input compact",
+      "description": "Modern AI chat interface components",
+      "files": [
+        {
+          "path": "resistry/Ai-Input-compact.tsx",
+          "type": "registry:component",
+          "target": "components/AHs/Ai-Input-compact.tsx"
         }
       ]
     },

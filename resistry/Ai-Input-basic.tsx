@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AiInput: React.FC = () => {
+const AiInputBasic: React.FC = () => {  
   return (
     <div className="p-4 min-w-full">
       <div className="relative">
@@ -101,4 +101,4 @@ const AiInput: React.FC = () => {
   );
 };
 
-export default AiInput;
+export default AiInputBasic;

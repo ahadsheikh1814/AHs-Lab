@@ -13,7 +13,7 @@
         "---Components---",
         "components/index",
         "components/typewriter-effect",
-        "components/ai-input",
+        "components/ai-inputs",
         "components/animeted-menubar",
         "components/bento-hover-effect",
         "components/Buttons",
