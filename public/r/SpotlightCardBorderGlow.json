@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "SpotlightCardBorderGlow",
+  "type": "registry:component",
+  "title": "Spotlight Card Border Glow",
+  "description": "A radial gradient that follows the mouse cursor as it moves across the card.",
+  "dependencies": [
+    "motion"
+  ],
+  "files": [
+    {
+      "path": "resistry/SpotlightCardBorderGlow.tsx",
+      "content": "\"use client\"\r\nimport { motion, useMotionTemplate, useMotionValue } from \"motion/react\"\r\nimport type { MouseEvent } from \"react\"\r\n\r\nexport default function SpotlightCardBorderGlow() {\r\n  const mouseX = useMotionValue(0)\r\n  const mouseY = useMotionValue(0)\r\n\r\n  function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {\r\n    const { left, top } = currentTarget.getBoundingClientRect()\r\n\r\n    mouseX.set(clientX - left)\r\n    mouseY.set(clientY - top)\r\n  }\r\n\r\n  return (\r\n    <div\r\n      className=\"group relative max-w-md rounded-xl bg-neutral-900 px-8 py-16 shadow-2xl\"\r\n      onMouseMove={handleMouseMove}\r\n    >\r\n      <motion.div\r\n        className=\"pointer-events-none absolute -inset-px rounded-xl opacity-0 transition duration-300 group-hover:opacity-100\"\r\n        style={{\r\n          background: useMotionTemplate`\r\n            radial-gradient(\r\n              400px circle at ${mouseX}px ${mouseY}px,\r\n              rgba(236, 72, 153, 0.4),\r\n              transparent 80%\r\n            )\r\n          `,\r\n          border: \"1px solid transparent\",\r\n          backgroundClip: \"padding-box\",\r\n        }}\r\n      />\r\n      <div className=\"relative border border-white/5 rounded-xl px-6 py-8 bg-neutral-800/50\">\r\n        <h3 className=\"text-base font-semibold tracking-tight leading-7 text-pink-400\">AHs Lab</h3>\r\n        <div className=\"mt-2 flex items-center gap-x-2\">\r\n          <span className=\"text-5xl font-bold tracking-tight text-white\">Framer Motion</span>\r\n        </div>\r\n        <p className=\"mt-6 text-xl font-bold leading-7 text-gray-300\">\r\n          Production-ready animations <br />\r\n          <span className=\"text-sm font-medium text-gray-400\">\r\n            A simple yet powerful motion library for React that brings your components to life with smooth animations.\r\n          </span>\r\n        </p>\r\n      </div>\r\n    </div>\r\n  )\r\n}\r\n",
+      "type": "registry:component",
+      "target": "components/AHs/SpotlightCardBorderGlow.tsx"
+    }
+  ]
+}

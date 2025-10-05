@@ -127,6 +127,34 @@
       ]
     },
     {
+      "name": "SpotlightCardBorderGlow",
+      "type": "registry:component",
+      "title": "Spotlight Card Border Glow",
+      "description": "A radial gradient that follows the mouse cursor as it moves across the card.",
+      "dependencies": ["motion"],
+      "files": [
+        {
+          "path": "resistry/SpotlightCardBorderGlow.tsx",
+          "type": "registry:component",
+          "target": "components/AHs/SpotlightCardBorderGlow.tsx"
+        }
+      ]
+    },
+    {
+      "name": "SpotlightCardAnimatedBorder",
+      "type": "registry:component",
+      "title": "Spotlight Card Animated Border",
+      "description": "A radial gradient that follows the mouse cursor as it moves across the card.",
+      "dependencies": ["motion"],
+      "files": [
+        {
+          "path": "resistry/SpotlightCardAnimatedBorder.tsx",
+          "type": "registry:component",
+          "target": "components/AHs/SpotlightCardAnimatedBorder.tsx"
+        }
+      ]
+    },
+    {
       "name": "Navigation_01",
       "type": "registry:block",
       "title": "Navigation_01",
