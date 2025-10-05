@@ -27,12 +27,6 @@ const Navbar = () => {
             >
               Templates
             </Link>
-            <Link
-              href={"/blocks"}
-              className="text-primary/90 hover:text-primary text-sm font-medium"
-            >
-              Blocks
-            </Link>
           </div>
         </div>
         <div className="flex items-center md:gap-4 gap-2 justify-center">

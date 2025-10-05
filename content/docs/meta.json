@@ -1,0 +1,23 @@
+{
+    "title": "Components",
+    "description": "The headless library",
+    "icon": "Dna",
+    "root": true,
+    "defaultOpen": true,
+    "pages": [
+        "---Introduction---",
+        "index",
+        "---Blocks---",
+        "blocks/Navigation_02",
+        "blocks/Navigation_01",
+        "---Components---",
+        "components/index",
+        "components/typewriter-effect",
+        "components/ai-input",
+        "components/animeted-menubar",
+        "components/bento-hover-effect",
+        "components/Buttons",
+        "components/hover-depth-card",
+        "components/text"
+    ]
+}
