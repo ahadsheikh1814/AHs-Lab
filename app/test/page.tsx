@@ -1,10 +1,10 @@
-import Section_01 from "@/resistry/blocks/sections/Section_01";
 import React from "react";
+import SpotlightCard from "@/resistry/SpotlightCard";
 
 const Test = () => {
   return (
-    <div className="min-h-screen w-full">
-      <Section_01/>
+    <div className="min-h-screen flex items-center justify-center w-full">
+      <SpotlightCard/>
     </div>
   );
 };

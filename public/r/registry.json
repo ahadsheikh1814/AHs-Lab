@@ -87,6 +87,20 @@
       ]
     },
     {
+      "name": "SpotlightCard",
+      "type": "registry:component",
+      "title": "Spotlight Card",
+      "description": "A radial gradient that follows the mouse cursor as it moves across the card.",
+      "dependencies": ["motion"],
+      "files": [
+        {
+          "path": "resistry/SpotlightCard.tsx",
+          "type": "registry:component",
+          "target": "components/AHs/SpotlightCard.tsx"
+        }
+      ]
+    },
+    {
       "name": "Navigation_01",
       "type": "registry:block",
       "title": "Navigation_01",
