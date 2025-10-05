@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import PreviewContent from "./Preivew-content";
+import { OpenInV0Button } from "./OpenInV0";
 
 interface PreviewProps {
   children: React.ReactNode;
@@ -11,6 +12,7 @@ interface PreviewProps {
   compact?: boolean;
   comment?: string[];
   isBlock?: boolean;
+  url?: string;
 }
 
 const prePath = process.env.VERCEL_PROJECT_PRODUCTION_URL
@@ -25,12 +27,16 @@ export function Preview({
   compact = false,
   comment = [],
   isBlock = false,
+  url = "",
 }: PreviewProps) {
   console.log(prePath + link);
   return (
     <>
       <div className={cn("w-full overflow-hidden", className)}>
-        <PreviewContent link={link} prePath={prePath} isBlock={isBlock} />
+        <div className="flex justify-between items-center">
+          <PreviewContent link={link} prePath={prePath} isBlock={isBlock} />
+          <OpenInV0Button url={url} />
+        </div>
 
         {useIframe ? (
           <div className="w-full my-4 border rounded-2xl border-zinc-400 dark:border-zinc-700">
