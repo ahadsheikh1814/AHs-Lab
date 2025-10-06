@@ -1,0 +1,216 @@
+"use client";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
+import React from "react";
+
+const FeaturesSection_01 = () => {
+  return (
+    <Container className="min-h-screen w-full bg-background text-neutral-800">
+      <div className="flex flex-col px-8 py-20">
+        <div>
+          <h3 className="pb-5 text-lg font-semibold uppercase tracking-wide text-neutral-600">
+            OUR VALUES
+          </h3>
+          <h1 className="bg-gradient-to-bl text-shadow-2xs h-14 from-neutral-500 via-cyan-950 to-neutral-800 dark:from-neutral-100 dark:via-cyan-100 dark:to-neutral-200 bg-clip-text text-5xl font-bold tracking-tighter text-transparent">
+            Why{" "}
+            <span
+              className={cn(
+                "relative z-10 inline-block text-white",
+                "before:absolute before:inset-0 before:-z-10 before:h-full before:w-full before:-skew-2 before:bg-red-500 before:content-['']",
+              )}
+            >
+              Choose
+            </span>{" "}
+            Us?
+          </h1>
+        </div>
+        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="group flex flex-col rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-5 shadow-sm transition-shadow hover:shadow-md dark:shadow-neutral-950 sm:p-6">
+            <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-100 dark:bg-neutral-700 transition-colors group-hover:bg-red-50 dark:group-hover:bg-red-950 sm:mb-4 sm:h-12 sm:w-12">
+              <motion.svg
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.3, type: "spring", stiffness: 200 }}
+                viewport={{ once: true }}
+                xmlns="http://www.w3.org/2000/svg"
+                width={20}
+                height={20}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-neutral-700 dark:text-neutral-300 transition-colors group-hover:text-red-500 dark:group-hover:text-red-400 sm:h-6 sm:w-6"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <motion.path
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 1, delay: 0.5 }}
+                  viewport={{ once: true }}
+                  d="M5.636 19.364a9 9 0 1 1 12.728 0" 
+                />
+                <motion.path 
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 0.6, delay: 1.2 }}
+                  viewport={{ once: true }}
+                  d="M16 9l-4 4" 
+                />
+              </motion.svg>
+            </div>
+            <h2 className="mb-1.5 text-lg font-semibold text-neutral-800 dark:text-neutral-100 sm:mb-2 sm:text-xl">
+              Performance
+            </h2>
+            <p className="text-xs leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-sm">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
+              beatae tenetur totam aut blanditiis ipsa quaerat neque eaque,
+              atque doloremque! Eligendi.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="group flex flex-col rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-5 shadow-sm transition-shadow hover:shadow-md dark:shadow-neutral-950 sm:p-6">
+            <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-100 dark:bg-neutral-700 transition-colors group-hover:bg-cyan-50 dark:group-hover:bg-cyan-950 sm:mb-4 sm:h-12 sm:w-12">
+              <motion.svg
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.4, type: "spring", stiffness: 200 }}
+                viewport={{ once: true }}
+                xmlns="http://www.w3.org/2000/svg"
+                width={20}
+                height={20}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-neutral-700 dark:text-neutral-300 transition-colors group-hover:text-cyan-600 dark:group-hover:text-cyan-400 sm:h-6 sm:w-6"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <motion.path 
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 1, delay: 0.6 }}
+                  viewport={{ once: true }}
+                  d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" 
+                />
+                <motion.path 
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 0.4, delay: 1.3 }}
+                  viewport={{ once: true }}
+                  d="M7 10l6 0" 
+                />
+                <motion.path 
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 0.4, delay: 1.5 }}
+                  viewport={{ once: true }}
+                  d="M10 7l0 6" 
+                />
+                <motion.path 
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 0.4, delay: 1.7 }}
+                  viewport={{ once: true }}
+                  d="M21 21l-6 -6" 
+                />
+              </motion.svg>
+            </div>
+            <h2 className="mb-1.5 text-lg font-semibold text-neutral-800 dark:text-neutral-100 sm:mb-2 sm:text-xl">
+              Quality
+            </h2>
+            <p className="text-xs leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-sm">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
+              beatae tenetur totam aut blanditiis ipsa quaerat neque eaque,
+              atque doloremque! Eligendi.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="group flex flex-col rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 p-5 shadow-sm transition-shadow hover:shadow-md dark:shadow-neutral-950 sm:p-6">
+            <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-100 dark:bg-neutral-700 transition-colors group-hover:bg-purple-50 dark:group-hover:bg-purple-950 sm:mb-4 sm:h-12 sm:w-12">
+              <motion.svg
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.5, type: "spring", stiffness: 200 }}
+                viewport={{ once: true }}
+                xmlns="http://www.w3.org/2000/svg"
+                width={20}
+                height={20}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-neutral-700 dark:text-neutral-300 transition-colors group-hover:text-purple-600 dark:group-hover:text-purple-400 sm:h-6 sm:w-6"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <motion.path 
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 1.5, delay: 0.7 }}
+                  viewport={{ once: true }}
+                  d="M13 20.693c-.905 .628 -2.36 .292 -2.675 -1.01a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.492 .362 1.716 2.219 .674 3.03" 
+                />
+                <motion.path 
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 0.6, delay: 1.9 }}
+                  viewport={{ once: true }}
+                  d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" 
+                />
+                <motion.path 
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  transition={{ duration: 0.4, delay: 2.3 }}
+                  viewport={{ once: true }}
+                  d="M17 22l5 -3l-5 -3z" 
+                />
+              </motion.svg>
+            </div>
+            <h2 className="mb-1.5 text-lg font-semibold text-neutral-800 dark:text-neutral-100 sm:mb-2 sm:text-xl">
+              Innovation
+            </h2>
+            <p className="text-xs leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-sm">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
+              beatae tenetur totam aut blanditiis ipsa quaerat neque eaque,
+              atque doloremque! Eligendi.
+            </p>
+          </motion.div>
+        </div>
+      </div>
+    </Container>
+  );
+};
+
+export default FeaturesSection_01;
+
+const Container = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <section className={cn(className, "mx-auto max-w-7xl")}>{children}</section>
+  );
+};

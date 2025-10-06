@@ -168,6 +168,19 @@
         }
       ]
     },{
+      "name": "FeaturesSection_01",
+      "type": "registry:block",
+      "title": "FeaturesSection_01",
+      "description": "FeaturesSection_01 is a responsive, animated React Features Section with expandable svg, staggered item animations, and customizable glassmorphic styling",
+      "dependencies": ["motion", "@tabler/icons"],
+      "files": [
+        {
+          "path": "resistry/blocks/sections/FeaturesSection_01.tsx",
+          "type": "registry:component",
+          "target": "components/Lab/FeaturesSection_01.tsx"
+        }
+      ]
+    },{
       "name": "Navigation_02",
       "type": "registry:block",
       "title": "Navigation_02",

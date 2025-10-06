@@ -10,6 +10,7 @@
         "---Blocks---",
         "blocks/Navigation_02",
         "blocks/Navigation_01",
+        "blocks/FeaturesSection_01",
         "---Components---",
         "components/index",
         "components/typewriter-effect",
