@@ -4,12 +4,12 @@ const AiInputBasic: React.FC = () => {
   return (
     <div className="p-4 min-w-full">
       <div className="relative">
-        <div className="relative flex flex-col border border-white/10 rounded-xl bg-sidebar-primary-foreground dark:bg-black">
+        <div className="relative flex flex-col border dark:border-white/10 border-neutral-300 rounded-xl bg-sidebar-primary-foreground dark:bg-black">
           <div className="overflow-y-auto">
             <textarea
               rows={3}
               style={{ overflow: "hidden", outline: "none" }}
-              className="w-full px-4 py-3 resize-none bg-transparent border-none focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-white/50 align-top leading-normal min-h-[80px] text-white"
+              className="w-full px-4 py-3 resize-none bg-transparent border-none focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 dark:placeholder:text-white/50 align-top leading-normal min-h-[80px] dark:text-white"
               placeholder="Ask me anything..."
             />
           </div>
@@ -17,7 +17,7 @@ const AiInputBasic: React.FC = () => {
             <div className="absolute left-3 right-3 bottom-3 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <button
-                  className="p-2 text-white/50 hover:text-white transition-colors rounded-lg border border-white/10 hover:border-white/20"
+                  className="p-2 dark:text-white/50 dark:hover:text-white transition-colors rounded-lg border border-white/10 hover:border-white/20"
                   aria-label="Attach file"
                   type="button"
                 >
@@ -34,7 +34,7 @@ const AiInputBasic: React.FC = () => {
                   </svg>
                 </button>
                 <button
-                  className="p-2 text-white/50 hover:text-white transition-colors rounded-lg border border-white/10 hover:border-white/20"
+                  className="p-2 dark:text-white/50 dark:hover:text-white transition-colors rounded-lg border border-white/10 hover:border-white/20"
                   aria-label="Attach web link"
                   type="button"
                 >
@@ -53,7 +53,7 @@ const AiInputBasic: React.FC = () => {
                   </svg>
                 </button>
                 <button
-                  className="p-2 text-white/50 hover:text-white transition-colors rounded-lg border border-white/10 hover:border-white/20"
+                  className="p-2 dark:text-white/50 dark:hover:text-white transition-colors rounded-lg border border-white/10 hover:border-white/20"
                   aria-label="Attach Figma link"
                   type="button"
                 >

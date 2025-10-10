@@ -15,7 +15,7 @@ export default function SpotlightCardAnimatedBorder() {
 
   return (
     <div
-      className="group relative max-w-md rounded-xl bg-gradient-to-br from-neutral-900 to-neutral-800 p-px shadow-2xl"
+      className="group relative max-w-md rounded-xl bg-gradient-to-br from-neutral-900 to-neutral-800 p-px shadow-2xl min-w-lg"
       onMouseMove={handleMouseMove}
     >
       <motion.div

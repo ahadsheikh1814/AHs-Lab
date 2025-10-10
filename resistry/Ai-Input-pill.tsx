@@ -2,7 +2,7 @@ import type React from "react"
 
 const AiInputPill: React.FC = () => {
   return (
-    <div className="p-4 w-3xl">
+    <div className="p-4 w-full relative">
       <div className="relative">
         <div className="relative flex items-center gap-3 rounded-full border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 px-5 py-3 shadow-sm">
           <button
