@@ -13,11 +13,13 @@ import { useRouter } from "next/navigation";
 import AiInputCompact from "@/resistry/Ai-Input-compact";
 import AiInputBasic from "@/resistry/Ai-Input-basic";
 import AiInputPill from "@/resistry/Ai-Input-pill";
+import Image from "next/image";
 
 const ComponentsPreview = () => {
   return (
     <div className="mt-0 w-full px-4 py-8">
       {/* Header Section */}
+      <div className="flex justify-between">
       <div className="text-left mb-12">
         <h1 className="text-4xl text-primary/90 tracking-tight font-medium text-shadow-2xs ">Component Showcase</h1>
         <p className="text-gray-600 dark:text-gray-400 mt-4 mb-8">
@@ -26,6 +28,22 @@ const ComponentsPreview = () => {
         <div className="flex justify-start">
           <CtaButton />
         </div>
+      </div>
+      <div className="mt-10">
+      <a
+        href="https://www.producthunt.com/products/ahs-lab?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-ahs&#0045;lab"
+        target="_blank"
+        className="mt-10"
+      >
+        <Image
+          src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1025106&theme=light&t=1760182734816"
+          alt="AHs&#0032;Lab - Ui&#0032;components&#0032;for&#0032;developers | Product Hunt"
+          width={250}
+          height={54}
+          className="w-[250px] h-[54px]"
+        />
+      </a>
+      </div>
       </div>
 
       {/* Components Grid */}
@@ -112,7 +130,7 @@ const ComponentsPreview = () => {
         </div>
 
         {/* AI Input Components */}
-        <div className="bg-white dark:bg-black rounded-lg border border-gray-200 dark:border-gray-800 p-6 hover:shadow-lg transition-shadow col-span-1 md:col-span-2 lg:col-span-2">
+        <div className="bg-white w-full dark:bg-black rounded-lg border border-gray-200 dark:border-gray-800 p-6 hover:shadow-lg transition-shadow col-span-1 md:col-span-2 lg:col-span-2">
           <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">
             AI Input Variants
           </h3>
@@ -122,8 +140,6 @@ const ComponentsPreview = () => {
             <AiInputPill/>
           </div>
         </div>
-
-        
       </div>
     </div>
   );
