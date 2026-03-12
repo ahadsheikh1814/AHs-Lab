@@ -23,6 +23,21 @@ export const metadata: Metadata = {
     icon: "/AHs.ico",
     shortcut: "/AHs.ico",
   },
+  openGraph: {
+    title: "AHs Lab - UI Components for Developers",
+    description:
+      "Cut boilerplate, ship faster with AHs Lab.",
+    url: "https://ahs-lab.vercel.app/",
+    siteName: "AHs Lab",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "AHs Lab - UI Components for Developers",
+      },
+    ],
+  },
 };
 
 
