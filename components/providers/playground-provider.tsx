@@ -164,9 +164,9 @@ const GLOBAL_CSS = `body {
 }`
 
 const FILE_META: Record<string, { language: string; dot: string }> = {
-  "/App.tsx":       { language: "typescript", dot: "bg-yellow-400" },
+  "/App.tsx": { language: "typescript", dot: "bg-yellow-400" },
   "/component.tsx": { language: "typescript", dot: "bg-yellow-400" },
-  "/global.css":    { language: "css",        dot: "bg-blue-400"   },
+  "/global.css": { language: "css", dot: "bg-blue-400" },
 }
 
 // ── All type stubs in one place ───────────────────────────────────────────────
@@ -446,11 +446,10 @@ function PlaygroundInner({ theme, activeFile, fileContents, onFileChange, onTabC
               <button
                 key={path}
                 onClick={() => onTabChange(path)}
-                className={`px-4 py-2 text-xs border-r border-white/10 transition-colors flex items-center gap-2 ${
-                  isActive
+                className={`px-4 py-2 text-xs border-r border-white/10 transition-colors flex items-center gap-2 ${isActive
                     ? "bg-[#1e1e1e] text-white border-t-2 border-t-[#00ff88]"
                     : "bg-[#2d2d2d] text-white/40 hover:text-white/70 hover:bg-[#252525]"
-                }`}
+                  }`}
               >
                 <span className={`w-2 h-2 rounded-full ${FILE_META[path].dot}`} />
                 {name}
@@ -483,9 +482,9 @@ export default function PlayGround() {
   const [isLive, setIsLive] = useState(true)
   const [activeFile, setActiveFile] = useState("/App.tsx")
   const [fileContents, setFileContents] = useState<Record<string, string>>({
-    "/App.tsx":       APP_CODE,
+    "/App.tsx": APP_CODE,
     "/component.tsx": COMPONENT_CODE,
-    "/global.css":    GLOBAL_CSS,
+    "/global.css": GLOBAL_CSS,
   })
 
   const handleFileChange = (path: string, value: string) =>
@@ -514,9 +513,8 @@ export default function PlayGround() {
               <button
                 key={t}
                 onClick={() => setTheme(t)}
-                className={`px-2 py-[2px] text-[10px] rounded capitalize tracking-wider transition ${
-                  theme === t ? "bg-white/10 text-white" : "text-white/40 hover:text-white/70"
-                }`}
+                className={`px-2 py-[2px] text-[10px] rounded capitalize tracking-wider transition ${theme === t ? "bg-white/10 text-white" : "text-white/40 hover:text-white/70"
+                  }`}
               >
                 {t}
               </button>
@@ -534,9 +532,9 @@ export default function PlayGround() {
             customSetup={{ dependencies: { "framer-motion": "latest" } }}
             files={{
               "/tailwind-setup.ts": { code: TAILWIND_BOOTSTRAP, hidden: true },
-              "/global.css":        { code: fileContents["/global.css"] },
-              "/component.tsx":     { code: fileContents["/component.tsx"] },
-              "/App.tsx":           { code: fileContents["/App.tsx"] },
+              "/global.css": { code: fileContents["/global.css"] },
+              "/component.tsx": { code: fileContents["/component.tsx"] },
+              "/App.tsx": { code: fileContents["/App.tsx"] },
             }}
             options={{
               visibleFiles: ["/App.tsx", "/component.tsx", "/global.css"],

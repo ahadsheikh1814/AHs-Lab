@@ -27,6 +27,12 @@ const Navbar = () => {
             >
               Templates
             </Link>
+            <Link
+              href={"/playground"}
+              className="text-primary/90 hover:text-primary text-sm font-medium"
+            >
+              Playground
+            </Link>
           </div>
         </div>
         <div className="flex items-center md:gap-4 gap-2 justify-center">
