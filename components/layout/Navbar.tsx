@@ -90,6 +90,13 @@ const MobileNav: React.FC<MobileNavProps> = ({ onClose }) => {
         >
           Templates
         </Link>
+        <Link
+          href={"/playground"}
+          onClick={onClose}
+          className="text-primary text-lg font-medium"
+        >
+          Playground
+        </Link>
         <a
           href="https://x.com/AhadSheikh1814_"
           onClick={onClose}
