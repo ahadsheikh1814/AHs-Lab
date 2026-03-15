@@ -7,17 +7,23 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import NewButton from "./new-button";
 
 const Hero = () => {
   const router = useRouter();
   return (
     <div className="relative overflow-hidden w-full md:px-10 px-5 border-b border-accent">
-      <div className="h-[50vh] w-full relative overflow-hidden">
+      <div className="min-h-[50vh] w-full relative overflow-hidden">
         <div className="md:mt-20 md:mb-5">
-          <h1 className="min-h-24 bg-gradient-to-bl from-neutral-700 to-neutral-900 bg-clip-text text-7xl font-bold tracking-tighter text-transparent dark:from-neutral-200 dark:to-neutral-300">
+          <NewButton
+          className="my-2"
+          title="changelog"
+          href="/changelog"
+          />
+          <h1 className="md:min-h-24 bg-gradient-to-bl from-neutral-700 to-neutral-900 bg-clip-text md:text-7xl text-3xl text-balance font-bold tracking-tighter text-transparent dark:from-neutral-200 dark:to-neutral-300">
             Build enterprise-grade sites <br /> with animated Shadcn blocks
           </h1>
-          <p className="mt-5 w-[30%] text-balance text-sm text-neutral-600 font-medium">
+          <p className="mt-5 md:w-[30%] text-balance text-sm text-neutral-600 font-medium">
             Quartz is your complete Shadcn kit for building and scaling marketing
             websites, with hundreds of blocks and more added regularly.
           </p>

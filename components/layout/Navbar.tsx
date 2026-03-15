@@ -33,6 +33,12 @@ const Navbar = () => {
             >
               Playground
             </Link>
+            <Link
+              href={"/changelog"}
+              className="text-primary/90 hover:text-primary text-sm font-medium"
+            >
+              Changelog
+            </Link>
           </div>
         </div>
         <div className="flex items-center md:gap-4 gap-2 justify-center">

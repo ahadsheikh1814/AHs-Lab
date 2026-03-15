@@ -16,6 +16,7 @@ const Page = () => {
           ImageUrl2="/img/slate-2.webp"
           ImageUrl3="/img/slate-3.webp"
         />
+        <div className="w-full h-px bg-accent mb-5"></div>
         <TempleteCard
           title="Minimal Protfolio"
           description="Showcase your Skils with a clean, modern, and Minimal design."

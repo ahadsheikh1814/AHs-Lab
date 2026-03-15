@@ -8,6 +8,20 @@ export type changelog_con_type = {
 
 export const changelog_content: changelog_con_type[] = [
     {
+        id: 49,
+        date: "March 15, 2026",
+        title: "Update /templates ui and layout",
+        description: "Updated templates page ui and layouts for showcasing templates in better ways.",
+        img_src:"/changelog/templates.png"
+    },
+    {
+        id: 48,
+        date: "March 15, 2026",
+        title: "Add /changelog page",
+        description: "Added a greate looking /changelog page for tracking the timeline.",
+        img_src:"/changelog/changelog.png"
+    },
+    {
         id: 47,
         date: "March 12, 2026",
         title: "Add og-image",

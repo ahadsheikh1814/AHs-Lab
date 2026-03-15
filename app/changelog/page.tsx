@@ -3,6 +3,7 @@ import P from '@/components/typography/P';
 import { cn } from '@/lib/utils';
 import React from 'react';
 import { changelog_content,changelog_con_type } from '@/lib/changelog';
+import Image from 'next/image';
 
 /** Group changelog entries by date so each date renders once on the left. */
 function groupByDate(items: changelog_con_type[]) {
@@ -92,7 +93,9 @@ const Changelog = () => {
 
                                     {item.img_src && (
                                         <div className="mt-4 rounded-lg overflow-hidden border border-accent md:ml-10">
-                                            <img
+                                            <Image
+                                                height={1200}
+                                                width={1200}
                                                 src={item.img_src}
                                                 alt={item.title}
                                                 className="w-full object-cover"
