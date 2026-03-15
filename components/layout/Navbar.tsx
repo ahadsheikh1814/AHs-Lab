@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="w-full h-full sticky top-0 backdrop-blur-2xl flex items-center justify-between py-4 md:px-0 px-5 z-50">
+      <nav className="w-full h-full sticky top-0 backdrop-blur-2xl flex items-center justify-between py-4 md:px-10 border-b border-accent px-5 z-50">
         <div className="flex items-center gap-10">
           <Logo />
           <div className="hidden md:flex gap-3">
@@ -148,9 +148,9 @@ const XIcon: React.FC<IconProps> = ({
 
 const Logo = () => {
   return (
-    <div className="text-xl font-bold text-ahs flex items-center gap-2 cursor-pointer">
+    <Link href={'/'} className="text-xl font-bold text-ahs flex items-center gap-2 cursor-pointer">
       <IconLayoutDashboardFilled />
       <h1 className="text-primary">AHs Lab</h1>
-    </div>
+    </Link>
   );
 };

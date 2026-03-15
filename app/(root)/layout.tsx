@@ -13,6 +13,7 @@ const Root_layout = ({ children }: { children: React.ReactNode }) => {
       disableTransitionOnChange
     >
       <Container>
+
         <Navbar />
         {children}
         <Footer/>

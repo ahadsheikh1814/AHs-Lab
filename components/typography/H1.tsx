@@ -26,7 +26,7 @@ const H1 = ({
     }}
     className={cn(
         className,
-        'md:text-6xl text-3xl font-semibold tracking-tight'
+        'min-h-24 bg-gradient-to-bl from-neutral-700 to-neutral-900 bg-clip-text text-7xl font-bold tracking-tighter text-transparent dark:from-neutral-200 dark:to-neutral-300'
     )}>{children}</motion.h1>
   );
 };

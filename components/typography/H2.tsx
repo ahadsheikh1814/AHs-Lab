@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import React from "react";
 import { easeInOut, easeOut, motion } from "motion/react";
 
-const P = ({
+const H2 = ({
   children,
   className,
 }: {
@@ -11,25 +11,24 @@ const P = ({
   className?: string;
 }) => {
   return(
-    <motion.p
+    <motion.h2
     initial={{
-        y:-10,
+        y:-15,
         opacity:0
     }}
-    animate={{
+    whileInView={{
         y:0,
         opacity:1
     }}
     transition={{
-        duration:0.3,
-        ease:easeOut,
-        delay:.1
+        duration:0.2,
+        ease:easeOut
     }}
     className={cn(
         className,
-        'mt-5 text-balance text-sm text-neutral-600 dark:text-neutral-400 font-medium'
-    )}>{children}</motion.p>
+        'min-h-15 bg-gradient-to-bl from-neutral-700 to-neutral-900 bg-clip-text text-5xl font-bold tracking-tighter text-transparent dark:from-neutral-200 dark:to-neutral-300'
+    )}>{children}</motion.h2>
   );
 };
 
-export default P;
+export default H2;
