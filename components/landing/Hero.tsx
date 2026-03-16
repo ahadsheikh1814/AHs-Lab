@@ -20,8 +20,8 @@ const Hero = () => {
           />
 
           {/* Headline */}
-          <h1 className="md:min-h-24 bg-gradient-to-bl from-neutral-700 to-neutral-900 bg-clip-text md:text-7xl text-4xl text-balance font-bold tracking-tighter text-transparent dark:from-neutral-200 dark:to-neutral-300 mt-4 leading-[1.08]">
-            Build modern web interfaces <br className="hidden md:block" /> with beautifully animated UI components.
+          <h1 className="md:min-h-32 py-1 bg-gradient-to-bl from-neutral-700 to-neutral-900 bg-clip-text md:text-7xl text-4xl text-balance font-bold tracking-tighter text-transparent dark:from-neutral-200 dark:to-neutral-300 mt-4 leading-[1.08]">
+            Build modern web interfaces with <br className="hidden md:block" />  beautifully animated UI components.
           </h1>
 
           {/* Subtext */}
