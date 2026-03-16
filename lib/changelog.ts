@@ -13,7 +13,6 @@ export const changelog_content: changelog_con_type[] = [
         title: "Playground page gets a full UI overhaul",
         description:
             "The Playground page has been redesigned from the ground up with a cleaner layout, improved file tabs, and a navbar that matches the rest of AHs Lab. Experimenting with components is now faster and more intuitive.",
-        img_src: "/changelog/templates.png",
     },
     {
         id: 50,
@@ -21,6 +20,7 @@ export const changelog_content: changelog_con_type[] = [
         title: "Homepage redesigned with a modern layout",
         description:
             "The AHs Lab homepage has been refreshed with an improved hero section, component spotlight grid, and cleaner visual hierarchy — making it easier for developers to discover and install components.",
+        img_src: "/changelog/homepage.png",
     },
     {
         id: 49,
