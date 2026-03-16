@@ -21,13 +21,12 @@ const Hero = () => {
 
           {/* Headline */}
           <h1 className="md:min-h-24 bg-gradient-to-bl from-neutral-700 to-neutral-900 bg-clip-text md:text-7xl text-4xl text-balance font-bold tracking-tighter text-transparent dark:from-neutral-200 dark:to-neutral-300 mt-4 leading-[1.08]">
-            Build enterprise-grade sites <br className="hidden md:block" /> with animated Shadcn blocks
+            Build modern web interfaces <br className="hidden md:block" /> with beautifully animated UI components.
           </h1>
 
           {/* Subtext */}
           <p className="mt-4 md:w-[32%] w-[90%] text-balance text-sm text-neutral-500 dark:text-neutral-400 font-medium leading-relaxed">
-            Quartz is your complete Shadcn kit for building and scaling marketing
-            websites, with hundreds of blocks and more added regularly.
+            AHs Lab is a modern UI component and template library for developers building with React, Next.js, and Tailwind CSS. Discover reusable components, production-ready templates, and an interactive playground to accelerate your workflow.
           </p>
 
           {/* CTA Buttons */}
