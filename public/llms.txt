@@ -1,0 +1,217 @@
+# Project
+
+**Name:** AHs Lab  
+**Tagline:** Build enterprise-grade sites with animated Shadcn blocks  
+**Author:** Md. Ahad Sheikh  
+**Website:** https://ahs-lab.vercel.app  
+**Type:** Open UI component library for React, Next.js, and Tailwind CSS developers
+
+---
+
+# Overview
+
+AHs Lab (also referred to as "Quartz") is a modern, production-ready UI component library built for developers who use React, Next.js, Tailwind CSS, and Shadcn UI. It provides a growing collection of animated components, pre-built layout blocks, and full-page starter templates that can be installed directly into any Next.js project using the Shadcn CLI.
+
+AHs Lab is designed for:
+- Frontend developers building marketing websites, SaaS dashboards, and landing pages
+- Developers who want to skip boilerplate and use copy-paste-ready, polished UI components
+- Teams that need enterprise-quality UI with minimal setup time
+- Developers already using the Shadcn UI ecosystem who want pre-animated, production-ready extensions
+
+Components are distributed via a public JSON registry and installed with a single CLI command:
+```bash
+npx shadcn@latest add https://ahs-lab.vercel.app/r/[component-name].json
+```
+
+---
+
+# Features
+
+- **Animated UI Components** — All components use Motion (formerly Framer Motion) for smooth, production-quality animations out of the box
+- **Shadcn CLI Distribution** — Every component is installable via `npx shadcn@latest add`, no copy-paste of raw source required
+- **Pre-built Layout Blocks** — Full sections (navbars, feature grids, hero sections) ready to drop into a page
+- **Starter Templates** — Complete page templates built with the component library for rapid project scaffolding
+- **Interactive Playground** — A live in-browser code editor (Monaco + Sandpack) for experimenting with components without any local setup
+- **Dark Mode Support** — All components support light and dark mode via Tailwind CSS and CSS variables
+- **TypeScript Support** — All components are written in TypeScript with full type definitions
+- **FumaDocs-powered Documentation** — Searchable, sidebar-navigated docs with live code previews and copy-paste install commands
+- **Open Graph & SEO Ready** — The project itself is optimized for sharing and discoverability
+- **Changelog Tracking** — A public changelog documents every update, new component, and fix
+
+---
+
+# Technologies
+
+| Technology | Role |
+|---|---|
+| **Next.js 14+** | Framework — App Router, SSR, file-based routing |
+| **React 18+** | UI rendering and component model |
+| **Tailwind CSS v4** | Utility-first styling with CSS variable theming |
+| **Shadcn UI** | Component primitives and CLI distribution layer |
+| **Motion (motion/react)** | Animation library powering all transitions and effects |
+| **TypeScript** | Type safety across all components and pages |
+| **FumaDocs** | Documentation framework with search and sidebar navigation |
+| **Monaco Editor** | In-browser code editor used in the Playground |
+| **Sandpack (CodeSandbox)** | Live component preview engine in the Playground |
+| **Vercel** | Hosting, deployment, analytics, and Speed Insights |
+| **Radix UI** | Accessible primitive components underpinning Shadcn UI |
+
+---
+
+# Pages
+
+## Homepage
+**URL:** https://ahs-lab.vercel.app  
+**Content:** Hero section with headline and CTA, component showcase with live install command, features section ("Why Choose Us"), and footer. Entry point for all new visitors.
+
+## Documentation — Introduction
+**URL:** https://ahs-lab.vercel.app/docs  
+**Content:** Getting started guide covering how to initialize Shadcn UI, install Tailwind CSS, and add Motion. Lists all available components and blocks in the sidebar.
+
+## Documentation — Components Index
+**URL:** https://ahs-lab.vercel.app/docs/components  
+**Content:** Index of all individual UI components with descriptions and links to their dedicated documentation pages.
+
+## Component — TypeWriter Effect
+**URL:** https://ahs-lab.vercel.app/docs/components/typewriter-effect  
+**Install:** `npx shadcn@latest add https://ahs-lab.vercel.app/r/typewriter-effect.json`  
+**Content:** Animated typewriter text component with configurable speed, cursor, and word cycling.
+
+## Component — AI Inputs
+**URL:** https://ahs-lab.vercel.app/docs/components/ai-inputs  
+**Install:** `npx shadcn@latest add https://ahs-lab.vercel.app/r/ai-inputs.json`  
+**Content:** Input field variants styled for AI chat interfaces and prompt-driven UIs.
+
+## Component — Animated Menubar
+**URL:** https://ahs-lab.vercel.app/docs/components/animeted-menubar  
+**Install:** `npx shadcn@latest add https://ahs-lab.vercel.app/r/animeted-menubar.json`  
+**Content:** Smooth animated navigation menubar with active-state transitions.
+
+## Component — Bento Hover Effect
+**URL:** https://ahs-lab.vercel.app/docs/components/bento-hover-effect  
+**Install:** `npx shadcn@latest add https://ahs-lab.vercel.app/r/bento-hover-effect.json`  
+**Content:** Bento grid card layout with magnetic spotlight hover effect.
+
+## Component — Buttons
+**URL:** https://ahs-lab.vercel.app/docs/components/Buttons  
+**Install:** `npx shadcn@latest add https://ahs-lab.vercel.app/r/Buttons.json`  
+**Content:** Collection of button variants — primary, outline, ghost, and more — built on Shadcn primitives.
+
+## Component — Hover Depth Card
+**URL:** https://ahs-lab.vercel.app/docs/components/hover-depth-card  
+**Install:** `npx shadcn@latest add https://ahs-lab.vercel.app/r/hover-depth-card.json`  
+**Content:** Card component with 3D parallax depth effect that responds to mouse position.
+
+## Component — Spotlight Card
+**URL:** https://ahs-lab.vercel.app/docs/components/spotlight-card  
+**Install:** `npx shadcn@latest add https://ahs-lab.vercel.app/r/spotlight-card.json`  
+**Content:** Card with a glowing radial spotlight that tracks the user's cursor in real time.
+
+## Block — Simple Navbar
+**URL:** https://ahs-lab.vercel.app/docs/blocks/Navigation_02  
+**Content:** Minimal, clean navbar block for standard web apps with responsive styling.
+
+## Block — Modern Responsive Navbar
+**URL:** https://ahs-lab.vercel.app/docs/blocks/Navigation_01  
+**Content:** Full-featured responsive navbar with mobile menu, dark mode toggle, and smooth animations.
+
+## Block — Features Section
+**URL:** https://ahs-lab.vercel.app/docs/blocks/FeaturesSection_01  
+**Content:** Animated three-column features/values section with SVG icon animations and hover states.
+
+## Templates
+**URL:** https://ahs-lab.vercel.app/templates  
+**Content:** Full starter page templates built with AHs Lab components. Ready to clone and customize for new projects.
+
+## Playground
+**URL:** https://ahs-lab.vercel.app/playground  
+**Content:** Live in-browser IDE (Monaco editor + Sandpack preview) for writing and previewing AHs Lab components with no local setup required. Supports hot reload, file tabs (App.tsx, component.tsx, global.css), and light/dark editor themes.
+
+## Changelog
+**URL:** https://ahs-lab.vercel.app/changelog  
+**Content:** Chronological record of all updates, new component releases, bug fixes, security patches, and infrastructure changes since the project's initial commit on September 25, 2025.
+
+---
+
+# Component Registry
+
+All components are served from a public JSON registry hosted at:
+```
+https://ahs-lab.vercel.app/r/[component-name].json
+```
+
+**Generic install pattern:**
+```bash
+npx shadcn@latest add https://ahs-lab.vercel.app/r/[component-name].json
+```
+
+**Available registry slugs:**
+- `typewriter-effect`
+- `ai-inputs`
+- `animeted-menubar`
+- `bento-hover-effect`
+- `Buttons`
+- `hover-depth-card`
+- `spotlight-card`
+
+---
+
+# Use Cases
+
+## Installing a single component
+A developer wants to add a typewriter animation to their Next.js hero section:
+```bash
+npx shadcn@latest add https://ahs-lab.vercel.app/r/typewriter-effect.json
+```
+The component is added to their project with all dependencies resolved.
+
+## Scaffolding a marketing page quickly
+A developer uses a pre-built AHs Lab template from `/templates` as a starting point, then customizes individual sections by swapping in components from the registry.
+
+## Prototyping without local setup
+A developer opens https://ahs-lab.vercel.app/playground, writes a custom component using AHs Lab's animation patterns in the Monaco editor, and sees a live preview in the Sandpack panel — no `npm install` required.
+
+## Referencing in AI-assisted development
+An AI coding assistant (Cursor, GitHub Copilot, Claude, etc.) can reference this file to understand how to suggest AHs Lab components, generate correct install commands, and explain available variants when a developer asks for React/Next.js UI help.
+
+## Adding a navbar block to a project
+A developer copies the Modern Responsive Navbar block from `/docs/blocks/Navigation_01`, pastes it into their project, and has a fully animated, mobile-responsive navbar with dark mode support in minutes.
+
+---
+
+# Prerequisites
+
+To use AHs Lab components, a project needs:
+
+1. **Next.js** (v13+ with App Router recommended)
+2. **Shadcn UI initialized** — `npx shadcn@latest init`
+3. **Tailwind CSS v4** — `npm install tailwindcss @tailwindcss/postcss postcss`
+4. **Motion** — `npm i motion`
+
+---
+
+# Links
+
+| Resource | URL |
+|---|---|
+| Homepage | https://ahs-lab.vercel.app |
+| Documentation | https://ahs-lab.vercel.app/docs |
+| Components Index | https://ahs-lab.vercel.app/docs/components |
+| Templates | https://ahs-lab.vercel.app/templates |
+| Playground | https://ahs-lab.vercel.app/playground |
+| Changelog | https://ahs-lab.vercel.app/changelog |
+| Component Registry (base URL) | https://ahs-lab.vercel.app/r/ |
+| Author on X (Twitter) | https://x.com/AhadSheikh1814_ |
+
+---
+
+# Metadata
+
+- **First release:** September 25, 2025  
+- **Latest update:** March 16, 2026  
+- **License:** Not specified — refer to repository  
+- **Maintained by:** Md. Ahad Sheikh  
+- **Deployment platform:** Vercel  
+- **Primary language:** TypeScript  
+- **Framework compatibility:** Next.js (App Router), React 18+  
+- **Styling system:** Tailwind CSS v4 + Shadcn UI + CSS variables

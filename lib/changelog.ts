@@ -8,6 +8,13 @@ export type changelog_con_type = {
 
 export const changelog_content: changelog_con_type[] = [
     {
+        id: 52,
+        date: "March 16, 2026",
+        title: "Added llms.txt file for future LLM integrations",
+        description:
+            "A new `llms.txt` file has been added to the project root, laying the groundwork for future integrations with large language models (LLMs) to power AI-assisted component generation and documentation.",
+    },
+    {
         id: 51,
         date: "March 16, 2026",
         title: "Playground page gets a full UI overhaul",
