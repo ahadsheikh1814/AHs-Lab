@@ -27,7 +27,7 @@ const P = ({
     }}
     className={cn(
         className,
-        'mt-5 text-balance text-sm text-neutral-600 dark:text-neutral-400 font-medium'
+        'mt-5 md:min-w-[32%] w-[90%] text-balance text-sm text-neutral-500 dark:text-neutral-400 font-medium leading-relaxed'
     )}>{children}</motion.p>
   );
 };

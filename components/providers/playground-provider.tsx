@@ -7,6 +7,8 @@ import { useSandpack } from "@codesandbox/sandpack-react"
 import Link from "next/link"
 import type { editor as MonacoEditorType } from "monaco-editor"
 import type * as MonacoType from "monaco-editor"
+import { IconLayoutDashboardFilled } from "@tabler/icons-react"
+import { ModeToggle } from "../layout/ModeToggle"
 
 const MonacoEditor = dynamic(() => import("@monaco-editor/react"), { ssr: false })
 const SandpackProvider = dynamic(
@@ -169,10 +171,8 @@ const FILE_META: Record<string, { language: string; dot: string }> = {
   "/global.css": { language: "css", dot: "bg-blue-400" },
 }
 
-// ── All type stubs in one place ───────────────────────────────────────────────
 const EXTRA_LIBS = [
   {
-    // Makes React a global so JSX never complains about it being out of scope
     content: `
       declare global {
         namespace React {
@@ -223,42 +223,21 @@ const EXTRA_LIBS = [
       declare module "framer-motion" {
         import * as React from "react"
         type MotionProps = {
-          animate?: any
-          initial?: any
-          exit?: any
-          transition?: any
-          variants?: any
-          custom?: any
-          whileHover?: any
-          whileTap?: any
-          whileFocus?: any
-          whileDrag?: any
-          whileInView?: any
-          style?: React.CSSProperties
-          className?: string
-          onClick?: (e: any) => void
-          onHoverStart?: (e: any) => void
-          onHoverEnd?: (e: any) => void
-          children?: React.ReactNode
-          layout?: boolean | string
-          layoutId?: string
-          [key: string]: any
+          animate?: any; initial?: any; exit?: any; transition?: any; variants?: any
+          custom?: any; whileHover?: any; whileTap?: any; whileFocus?: any
+          whileDrag?: any; whileInView?: any; style?: React.CSSProperties
+          className?: string; onClick?: (e: any) => void
+          onHoverStart?: (e: any) => void; onHoverEnd?: (e: any) => void
+          children?: React.ReactNode; layout?: boolean | string
+          layoutId?: string; [key: string]: any
         }
-        type MotionComponents = {
-          [K in keyof JSX.IntrinsicElements]: React.ComponentType<MotionProps>
-        }
+        type MotionComponents = { [K in keyof JSX.IntrinsicElements]: React.ComponentType<MotionProps> }
         export const motion: MotionComponents & Record<string, React.ComponentType<MotionProps>>
         export const AnimatePresence: React.ComponentType<{
-          children?: React.ReactNode
-          mode?: "sync" | "wait" | "popLayout"
-          initial?: boolean
-          onExitComplete?: () => void
+          children?: React.ReactNode; mode?: "sync" | "wait" | "popLayout"
+          initial?: boolean; onExitComplete?: () => void
         }>
-        export function useAnimation(): {
-          start: (def: any) => Promise<any>
-          stop: () => void
-          set: (def: any) => void
-        }
+        export function useAnimation(): { start: (def: any) => Promise<any>; stop: () => void; set: (def: any) => void }
         export function useMotionValue(init: number): any
         export function useTransform(v: any, input: number[], output: any[]): any
         export function useSpring(v: any, config?: any): any
@@ -271,21 +250,18 @@ const EXTRA_LIBS = [
     filePath: "file:///node_modules/framer-motion/index.d.ts",
   },
   {
-    // Stub JSX intrinsics so HTML elements don't show "no overload matches" errors
     content: `
       declare namespace JSX {
         interface Element {}
-        interface IntrinsicElements {
-          [elemName: string]: any
-        }
-        interface IntrinsicAttributes {
-          key?: any
-        }
+        interface IntrinsicElements { [elemName: string]: any }
+        interface IntrinsicAttributes { key?: any }
       }
     `,
     filePath: "file:///jsx.d.ts",
   },
 ]
+
+// ── Editor Bridge ─────────────────────────────────────────────────────────────
 
 function EditorBridge({ theme, activeFile, files, onFileChange }: {
   theme: Theme
@@ -301,7 +277,6 @@ function EditorBridge({ theme, activeFile, files, onFileChange }: {
     editorRef.current = editor
     monacoRef.current = monaco as typeof MonacoType
 
-    // ── Compiler options ────────────────────────────────────────────────────
     monaco.languages.typescript.typescriptDefaults.setCompilerOptions({
       target: monaco.languages.typescript.ScriptTarget.ESNext,
       allowNonTsExtensions: true,
@@ -311,38 +286,22 @@ function EditorBridge({ theme, activeFile, files, onFileChange }: {
       esModuleInterop: true,
       allowSyntheticDefaultImports: true,
       allowJs: true,
-      // Preserve: Monaco validates JSX syntax without trying to transform it,
-      // so it never checks whether React is in scope → kills error 2874
       jsx: monaco.languages.typescript.JsxEmit.Preserve,
       lib: ["ESNext", "DOM", "DOM.Iterable"],
       strict: false,
       skipLibCheck: true,
     })
 
-    // ── Suppress specific noisy diagnostic codes ────────────────────────────
     monaco.languages.typescript.typescriptDefaults.setDiagnosticsOptions({
       noSemanticValidation: false,
       noSyntaxValidation: false,
-      diagnosticCodesToIgnore: [
-        2874,  // JSX requires React in scope
-        2307,  // Cannot find module 'x'
-        2304,  // Cannot find name 'x'
-        17004, // Cannot use JSX unless '--jsx' flag is provided
-        7006,  // Parameter implicitly has 'any' type
-        7031,  // Binding element implicitly has 'any' type
-        2339,  // Property does not exist on type
-        2345,  // Argument not assignable
-      ],
+      diagnosticCodesToIgnore: [2874, 2307, 2304, 17004, 7006, 7031, 2339, 2345],
     })
 
-    // ── Register all type stubs ─────────────────────────────────────────────
-    // Dispose old libs first to avoid duplicates on hot reload
     monaco.languages.typescript.typescriptDefaults.setExtraLibs(
       EXTRA_LIBS.map(({ content, filePath }) => ({ content, filePath }))
     )
 
-    // ── Register all sandbox files as Monaco models ─────────────────────────
-    // This gives cross-file IntelliSense (imports resolve between files)
     Object.entries(files).forEach(([path, code]) => {
       const uri = monaco.Uri.parse(`file://${path}`)
       const lang = path.endsWith(".css") ? "css" : "typescript"
@@ -355,17 +314,13 @@ function EditorBridge({ theme, activeFile, files, onFileChange }: {
   }
 
   const handleChange = (value: string | undefined) => {
-    if (!value === undefined) return
-    const v = value ?? ""
-    onFileChange(activeFile, v)
-    sandpack.updateFile(activeFile, v)
-
-    // Keep the Monaco model for this file in sync so cross-file
-    // IntelliSense reflects the latest content
+    if (value === undefined) return
+    onFileChange(activeFile, value)
+    sandpack.updateFile(activeFile, value)
     const m = monacoRef.current as typeof MonacoType
     const uri = m?.Uri.parse(`file://${activeFile}`)
     const model = uri && m?.editor.getModel(uri)
-    if (model && model.getValue() !== v) model.setValue(v)
+    if (model && model.getValue() !== value) model.setValue(value)
   }
 
   return (
@@ -381,15 +336,15 @@ function EditorBridge({ theme, activeFile, files, onFileChange }: {
         fontSize: 13,
         fontFamily: "'Fira Code', 'Cascadia Code', 'Consolas', monospace",
         fontLigatures: true,
-        minimap: { enabled: true },
+        minimap: { enabled: false },
         scrollBeyondLastLine: false,
         automaticLayout: true,
         tabSize: 2,
         wordWrap: "on",
         lineNumbers: "on",
-        glyphMargin: true,
+        glyphMargin: false,
         folding: true,
-        renderLineHighlight: "all",
+        renderLineHighlight: "line",
         suggestOnTriggerCharacters: true,
         acceptSuggestionOnEnter: "on",
         quickSuggestions: { other: true, comments: true, strings: true },
@@ -398,33 +353,18 @@ function EditorBridge({ theme, activeFile, files, onFileChange }: {
         formatOnPaste: true,
         formatOnType: true,
         snippetSuggestions: "top",
-        suggest: {
-          preview: true,
-          showMethods: true,
-          showFunctions: true,
-          showConstructors: true,
-          showFields: true,
-          showVariables: true,
-          showClasses: true,
-          showModules: true,
-          showProperties: true,
-          showKeywords: true,
-          showSnippets: true,
-        },
         bracketPairColorization: { enabled: true },
-        guides: { bracketPairs: true, indentation: true },
         smoothScrolling: true,
         cursorBlinking: "smooth",
         cursorSmoothCaretAnimation: "on",
         padding: { top: 16, bottom: 16 },
-        scrollbar: {
-          verticalScrollbarSize: 6,
-          horizontalScrollbarSize: 6,
-        },
+        scrollbar: { verticalScrollbarSize: 4, horizontalScrollbarSize: 4 },
       }}
     />
   )
 }
+
+// ── Playground Inner ──────────────────────────────────────────────────────────
 
 function PlaygroundInner({ theme, activeFile, fileContents, onFileChange, onTabChange }: {
   theme: Theme
@@ -434,11 +374,11 @@ function PlaygroundInner({ theme, activeFile, fileContents, onFileChange, onTabC
   onTabChange: (path: string) => void
 }) {
   return (
-    <SandpackLayout style={{ flex: 1, height: "calc(100vh - 140px)" }}>
-      <div className="flex flex-col" style={{ flex: 1, height: "100%" }}>
-
+    <SandpackLayout style={{ flex: 1, height: "calc(100vh - 57px)", borderRadius: 0, border: "none" }}>
+      {/* Editor panel */}
+      <div className="flex flex-col border-r border-accent" style={{ flex: 1, height: "100%" }}>
         {/* File tabs */}
-        <div className="flex items-center border-b border-white/10 bg-[#1e1e1e]">
+        <div className="flex items-center border-b border-accent bg-accent overflow-x-auto">
           {Object.keys(FILE_META).map((path) => {
             const name = path.replace("/", "")
             const isActive = activeFile === path
@@ -446,12 +386,13 @@ function PlaygroundInner({ theme, activeFile, fileContents, onFileChange, onTabC
               <button
                 key={path}
                 onClick={() => onTabChange(path)}
-                className={`px-4 py-2 text-xs border-r border-white/10 transition-colors flex items-center gap-2 ${isActive
-                    ? "bg-[#1e1e1e] text-white border-t-2 border-t-[#00ff88]"
-                    : "bg-[#2d2d2d] text-white/40 hover:text-white/70 hover:bg-[#252525]"
-                  }`}
+                className={`px-4 py-2.5 text-xs border-r border-accent transition-colors flex items-center gap-2 whitespace-nowrap ${
+                  isActive
+                    ? "bg-background text-neutral-800 dark:text-neutral-100 border-t-2 border-t-neutral-900 dark:border-t-neutral-100"
+                    : "text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 hover:bg-background/50"
+                }`}
               >
-                <span className={`w-2 h-2 rounded-full ${FILE_META[path].dot}`} />
+                <span className={`w-1.5 h-1.5 rounded-full ${FILE_META[path].dot}`} />
                 {name}
               </button>
             )
@@ -468,6 +409,7 @@ function PlaygroundInner({ theme, activeFile, fileContents, onFileChange, onTabC
         </div>
       </div>
 
+      {/* Preview panel */}
       <SandpackPreview
         showRefreshButton
         showOpenInCodeSandbox={false}
@@ -476,6 +418,8 @@ function PlaygroundInner({ theme, activeFile, fileContents, onFileChange, onTabC
     </SandpackLayout>
   )
 }
+
+// ── Main Export ───────────────────────────────────────────────────────────────
 
 export default function PlayGround() {
   const [theme, setTheme] = useState<Theme>("dark")
@@ -491,66 +435,89 @@ export default function PlayGround() {
     setFileContents(prev => ({ ...prev, [path]: value }))
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0a0a0f]">
+    <div className="min-h-screen flex flex-col bg-background">
 
-      {/* Top Bar */}
-      <div className="sticky top-0 z-50 h-[52px] px-6 flex items-center justify-between border-b border-white/10 bg-white/[0.02] backdrop-blur-md">
-        <Link href={'/'} className="flex items-center gap-2">
-          <span className="text-white/90 text-xs font-semibold tracking-widest uppercase">AHS Lab</span>
-          <span className="text-white/20">/</span>
-          <span className="text-white/40 text-xs tracking-wider">playground</span>
-        </Link>
-
-        <div className="flex items-center gap-3">
-          <div onClick={() => setIsLive(!isLive)} className="flex items-center gap-1.5 cursor-pointer group">
-            <div className={`w-[7px] h-[7px] rounded-full transition-colors ${isLive ? "bg-emerald-400 animate-pulse" : "bg-red-500"}`} />
-            <span className="text-[11px] tracking-widest text-white/40 group-hover:text-white/60 transition-colors">
-              {isLive ? "LIVE" : "PAUSED"}
+      {/* Navbar — matches site layout */}
+      <nav className="sticky top-0 z-50 h-[57px] w-full flex items-center justify-between px-5 md:px-10 border-b border-accent backdrop-blur-2xl bg-background/80">
+        {/* Left: Logo + breadcrumb */}
+        <div className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2 cursor-pointer">
+            <IconLayoutDashboardFilled className="text-neutral-700 dark:text-neutral-300 w-4 h-4" />
+            <span className="text-sm font-bold text-neutral-900 dark:text-neutral-100 tracking-tight">
+              AHs Lab
             </span>
-          </div>
-          <div className="flex items-center gap-1 bg-white/5 border border-white/10 rounded-md px-1 py-[2px]">
+          </Link>
+          <span className="text-neutral-300 dark:text-neutral-600">/</span>
+          <span className="text-xs text-neutral-400 dark:text-neutral-500 tracking-wide">
+            playground
+          </span>
+        </div>
+
+        {/* Right: controls */}
+        <div className="flex items-center gap-3">
+          {/* Live indicator */}
+          <button
+            onClick={() => setIsLive(!isLive)}
+            className="flex items-center gap-1.5 group"
+            aria-label="Toggle live reload"
+          >
+            <div className={`w-1.5 h-1.5 rounded-full transition-colors ${isLive ? "bg-emerald-400 animate-pulse" : "bg-neutral-400"}`} />
+            <span className="text-[11px] tracking-widest uppercase text-neutral-400 group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors">
+              {isLive ? "Live" : "Paused"}
+            </span>
+          </button>
+
+          <div className="w-px h-4 bg-accent" />
+
+          {/* Theme toggle for editor */}
+          <div className="flex items-center gap-0.5 bg-accent border border-accent rounded-md px-1 py-1">
             {THEMES.map((t) => (
               <button
                 key={t}
                 onClick={() => setTheme(t)}
-                className={`px-2 py-[2px] text-[10px] rounded capitalize tracking-wider transition ${theme === t ? "bg-white/10 text-white" : "text-white/40 hover:text-white/70"
-                  }`}
+                className={`px-2 py-0.5 text-[10px] rounded capitalize tracking-wide transition-colors ${
+                  theme === t
+                    ? "bg-background text-neutral-800 dark:text-neutral-100 shadow-sm"
+                    : "text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300"
+                }`}
               >
                 {t}
               </button>
             ))}
           </div>
-        </div>
-      </div>
 
-      {/* Playground */}
-      <div className="flex-1 flex flex-col">
-        <div className="flex-1 overflow-hidden border border-white/10 shadow-[0_24px_80px_rgba(0,0,0,0.6),0_0_60px_rgba(0,255,136,0.03)] flex flex-col">
-          <SandpackProvider
-            theme={theme}
-            template="react-ts"
-            customSetup={{ dependencies: { "framer-motion": "latest" } }}
-            files={{
-              "/tailwind-setup.ts": { code: TAILWIND_BOOTSTRAP, hidden: true },
-              "/global.css": { code: fileContents["/global.css"] },
-              "/component.tsx": { code: fileContents["/component.tsx"] },
-              "/App.tsx": { code: fileContents["/App.tsx"] },
-            }}
-            options={{
-              visibleFiles: ["/App.tsx", "/component.tsx", "/global.css"],
-              activeFile,
-              autoReload: isLive,
-            }}
-          >
-            <PlaygroundInner
-              theme={theme}
-              activeFile={activeFile}
-              fileContents={fileContents}
-              onFileChange={handleFileChange}
-              onTabChange={setActiveFile}
-            />
-          </SandpackProvider>
+          <div className="w-px h-4 bg-accent" />
+
+          <ModeToggle />
         </div>
+      </nav>
+
+      {/* Editor + Preview */}
+      <div className="flex-1 flex flex-col overflow-hidden">
+        <SandpackProvider
+          theme={theme}
+          template="react-ts"
+          customSetup={{ dependencies: { "framer-motion": "latest" } }}
+          files={{
+            "/tailwind-setup.ts": { code: TAILWIND_BOOTSTRAP, hidden: true },
+            "/global.css": { code: fileContents["/global.css"] },
+            "/component.tsx": { code: fileContents["/component.tsx"] },
+            "/App.tsx": { code: fileContents["/App.tsx"] },
+          }}
+          options={{
+            visibleFiles: ["/App.tsx", "/component.tsx", "/global.css"],
+            activeFile,
+            autoReload: isLive,
+          }}
+        >
+          <PlaygroundInner
+            theme={theme}
+            activeFile={activeFile}
+            fileContents={fileContents}
+            onFileChange={handleFileChange}
+            onTabChange={setActiveFile}
+          />
+        </SandpackProvider>
       </div>
     </div>
   )

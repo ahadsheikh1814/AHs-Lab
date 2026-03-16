@@ -1,3 +1,4 @@
+import ComponentSpotlight from '@/components/landing/component-spotlight'
 import ComponentsPreview from '@/components/landing/ComponentsPreview'
 import Features from '@/components/landing/features'
 import Hero from '@/components/landing/Hero'
@@ -9,6 +10,7 @@ const Home = () => {
       <Hero/>
       <ComponentsPreview/>
       <Features/>
+      <ComponentSpotlight/>
     </div>
   )
 }
