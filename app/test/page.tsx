@@ -1,13 +1,12 @@
 "use client";
-import Container from '@/components/layout/Container';
-import Navigation_03 from '@/resistry/blocks/navigations/Navigation_03';
+import Herosection_01 from '@/resistry/blocks/sections/hero-section_01';
+import MotionCard from '@/resistry/motion-card';
+import { config, title } from 'process';
 import React from 'react'
 
 const page = () => {
   return (
-    <Container>
-      <Navigation_03/>
-    </Container>
+    <Herosection_01/>
   )
 }
 

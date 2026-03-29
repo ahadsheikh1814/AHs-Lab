@@ -167,7 +167,8 @@
           "target": "components/Lab/Navigation_01.tsx"
         }
       ]
-    },{
+    },
+    {
       "name": "FeaturesSection_01",
       "type": "registry:block",
       "title": "FeaturesSection_01",
@@ -180,7 +181,8 @@
           "target": "components/Lab/FeaturesSection_01.tsx"
         }
       ]
-    },{
+    },
+    {
       "name": "Navigation_02",
       "type": "registry:block",
       "title": "Navigation_02",
@@ -191,6 +193,34 @@
           "path": "resistry/blocks/navigations/Navigation_02.tsx",
           "type": "registry:component",
           "target": "components/Lab/Navigation_02.tsx"
+        }
+      ]
+    },
+    {
+      "name": "Navigation_03",
+      "type": "registry:block",
+      "title": "Navigation_03",
+      "description": "Responsive nav with Motion layout hover pill, full-screen mobile drawer, body scroll lock, and backdrop blur.",
+      "dependencies": ["motion"],
+      "files": [
+        {
+          "path": "resistry/blocks/navigations/Navigation_03.tsx",
+          "type": "registry:component",
+          "target": "components/Lab/navigations/Navigation_03.tsx"
+        }
+      ]
+    },
+    {
+      "name": "HeroSection_01",
+      "type": "registry:block",
+      "title": "Hero Section 01",
+      "description": "Marketing hero with Navigation_03, headline, CTAs, and a framed dashboard preview.",
+      "registryDependencies": ["Navigation_03"],
+      "files": [
+        {
+          "path": "resistry/blocks/sections/hero-section_01.tsx",
+          "type": "registry:component",
+          "target": "components/Lab/sections/hero-section_01.tsx"
         }
       ]
     }
