@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import React from "react";
-import { easeInOut, easeOut, motion } from "motion/react";
+import { easeOut, motion } from "motion/react";
 
 const H2 = ({
   children,

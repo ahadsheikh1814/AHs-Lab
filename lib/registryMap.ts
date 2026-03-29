@@ -6,4 +6,5 @@ export const registryMap: Record<string, RegistryImporter> = {
   Navigation_02: () => import("@/resistry/blocks/navigations/Navigation_02"),
   Navigation_03: () => import("@/resistry/blocks/navigations/Navigation_03"),
   FeaturesSection_01:()=> import("@/resistry/blocks/sections/FeaturesSection_01"),
+  HeroSection_01: () => import("@/resistry/blocks/sections/hero-section_01"),
 };

@@ -3,7 +3,6 @@ import H1 from '../typography/H1';
 import P from '../typography/P';
 
 const TempleteHeading = () => {
-  const blocks = Array.from({ length: 200 });
 
   return (
       <div className="md:px-10 px-5 py-20 border-b border-accent">
