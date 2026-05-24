@@ -22,6 +22,7 @@
         "components/bento-hover-effect",
         "components/Buttons",
         "components/hover-depth-card",
-        "components/spotlight-card"
+        "components/spotlight-card",
+        "components/commands"
     ]
 }
