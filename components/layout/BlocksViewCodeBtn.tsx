@@ -7,10 +7,9 @@ import BlockCommand from "./BlockCommand";
 import { usePathname } from "next/navigation";
 import { registryMap } from "@/lib/registryMap";
 
-// Generate component paths from registryMap
-const componentPaths = Object.keys(registryMap).map(key => ({
-  name: key,
-  path: `resistry/blocks/navigations/${key}.tsx`
+const componentPaths = Object.entries(registryMap).map(([name, path]) => ({
+  name,
+  path,
 }));
 
 const BlocksViewCodeBtn = () => {
