@@ -53,7 +53,7 @@ export default function RootLayout({
         <script src="https://analytics.ahrefs.com/analytics.js" data-key="30Lno/g3E8Kntz1N4m8amA" async></script>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.className} ${geistMono.variable} antialiased`}
       >
         <SpeedInsights/>
         <Analytics/>

@@ -11,31 +11,31 @@ export const ButtonsColorfull = ({
   className?: string;
 }) => {
   return (
-    <motion.button 
+    <motion.button
       className={cn(
         // Base styles
-        'px-6 py-3 rounded-lg font-semibold text-base cursor-pointer',
-        'relative overflow-hidden transition-all duration-100 ease-in-out',
-        'transform hover:scale-105 active:scale-95',
-        
+        "px-6 py-3 rounded-lg font-semibold text-base cursor-pointer",
+        "relative overflow-hidden transition-all duration-100 ease-in-out",
+        "transform hover:scale-105 active:scale-95",
+
         // Gradient background
-        'bg-gradient-to-r from-green-400 via-cyan-400 to-pink-400',
-        'hover:bg-gradient-to-r hover:from-green-500 hover:via-cyan-500 hover:to-pink-500',
-        
+        "bg-gradient-to-r from-green-400 via-cyan-400 to-pink-400",
+        "hover:bg-gradient-to-r hover:from-green-500 hover:via-cyan-500 hover:to-pink-500",
+
         // Text styling
-        'text-white drop-shadow-sm',
-        
+        "text-white drop-shadow-sm",
+
         // Focus states for accessibility
-        'focus:outline-none focus:ring-4 focus:ring-pink-300/50',
-        
+        "focus:outline-none focus:ring-4 focus:ring-pink-300/50",
+
         // Shadow effects
-        'shadow-lg hover:shadow-xl',
-        
-        className
+        "shadow-lg hover:shadow-xl",
+
+        className,
       )}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      transition={{ duration:.1 , ease:"backOut" }}
+      transition={{ duration: 0.1, ease: "backOut" }}
     >
       {children}
     </motion.button>
@@ -48,20 +48,21 @@ export const ButtonsDarkToLight = ({
 }: {
   children: React.ReactNode;
   className?: string;
-})=>{
-    return(
-        <button className={cn(className,
-            'px-6 py-2 rounded font-semibold text-base cursor-pointer border border-neutral-700 text-white',
-        'relative overflow-hidden transition-colors duration-1000 ease-in-out',
-        'bg-gradient-to-br from-purple-950 to-pink-950',
-        'hover:from-purple-500 to-pink-500'
-        )
-        }>
-            {children}
-        </button>
-    )
-}
-
+}) => {
+  return (
+    <button
+      className={cn(
+        className,
+        "px-6 py-2 rounded font-semibold text-base cursor-pointer border border-neutral-700 text-white",
+        "relative overflow-hidden transition-colors duration-1000 ease-in-out",
+        "bg-gradient-to-br from-purple-950 to-pink-950",
+        "hover:from-purple-500 to-pink-500",
+      )}
+    >
+      {children}
+    </button>
+  );
+};
 
 export const ButtonSimple = ({
   children,
@@ -69,15 +70,38 @@ export const ButtonSimple = ({
 }: {
   children: React.ReactNode;
   className?: string;
-})=>{
-    return(
-        <button className={cn(className,
-            'px-6 py-3 rounded-lg font-semibold text-base cursor-pointer border border-neutral-700',
-        'relative overflow-hidden transition-all duration-100 ease-in-out',
-        'transform hover:scale-105 active:scale-95'
-        )
-        }>
-            {children}
-        </button>
-    )
-}
+}) => {
+  return (
+    <button
+      className={cn(
+        className,
+        "px-6 py-3 rounded-lg font-semibold text-base cursor-pointer border border-neutral-700",
+        "relative overflow-hidden transition-all duration-100 ease-in-out",
+        "transform hover:scale-105 active:scale-95",
+      )}
+    >
+      {children}
+    </button>
+  );
+};
+
+export const ButtonBrand = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <button
+      className={cn(
+        className,
+        "px-5 py-2 bg-neutral-200 dark:bg-neutral-800 text-foreground/90 rounded text-base font-medium cursor-pointer border border-accent-foreground/10 capitalize relative overflow-hidden",
+        "before:absolute before:-left-20 before:bottom-0 before:h-33 before:w-30 before:bg-neutral-300/50 dark:before:bg-neutral-700/50 before:skew-x-12",
+        "hover:before:translate-x-56 before:transition-all before:duration-200",
+      )}
+    >
+      {children}
+    </button>
+  );
+};
