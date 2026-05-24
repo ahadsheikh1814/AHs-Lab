@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "Inputs",
+  "type": "registry:component",
+  "title": "Input Fields",
+  "description": "A set of minimal, accessible React input components with clean focus states, label support, and dark mode compatibility. Designed to drop into any form or design system.",
+  "files": [
+    {
+      "path": "resistry/inputs.tsx",
+      "content": "import { cn } from \"@/lib/utils\";\r\nimport React from \"react\";\r\n\r\nexport const Input = ({\r\n  name,\r\n  placholder,\r\n}: {\r\n  name?: string;\r\n  placholder: string;\r\n}) => {\r\n  return (\r\n    <input\r\n      type=\"text\"\r\n      name={name}\r\n      placeholder={placholder}\r\n      className={cn(\r\n        \"w-full px-3 py-2 rounded-md border bg-transparent\",\r\n        \"text-neutral-900 dark:text-neutral-100\",\r\n        \"placeholder:text-neutral-400 dark:placeholder:text-neutral-500\",\r\n        \"focus:outline-none focus:ring-2 focus:ring-neutral-500/20 focus:border-neutral-500\",\r\n      )}\r\n    />\r\n  );\r\n};\r\n\r\nexport const Textarea = ({\r\n  name,\r\n  placholder,\r\n}: {\r\n  name?: string;\r\n  placholder: string;\r\n}) => {\r\n  return (\r\n    <textarea\r\n      name={name}\r\n      placeholder={placholder}\r\n      rows={5}\r\n      className={cn(\r\n        \"w-full px-3 py-2 rounded-md border bg-transparent resize-none\",\r\n        \"text-neutral-900 dark:text-neutral-100\",\r\n        \"placeholder:text-neutral-400 dark:placeholder:text-neutral-500\",\r\n        \"focus:outline-none focus:ring-2 focus:ring-neutral-500/20 focus:border-neutral-500\",\r\n      )}\r\n    />\r\n  );\r\n};\r\n\r\nexport const InputFild = ({\r\n  name,\r\n  placholder,\r\n  label,\r\n  type,\r\n}: {\r\n  name?: string;\r\n  placholder: string;\r\n  label: string;\r\n  type: \"Input\" | \"Textarea\";\r\n}) => {\r\n  <div>\r\n    <label className=\"block text-sm text-neutral-700 dark:text-neutral-300 mb-1\">\r\n      {label}\r\n    </label>\r\n    {type === \"Input\" ? (\r\n      <Input name={name} placholder={placholder} />\r\n    ) : (\r\n      <Textarea name={name} placholder={placholder} />\r\n    )}\r\n  </div>;\r\n};\r\n",
+      "type": "registry:component",
+      "target": "components/ui/inputs.tsx"
+    }
+  ]
+}

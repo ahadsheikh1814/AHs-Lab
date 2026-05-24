@@ -13,6 +13,7 @@
         "blocks/Navigation_01",
         "blocks/FeaturesSection_01",
         "blocks/HeroSection_01",
+        "blocks/Contact_01",
         "---Components---",
         "components/index",
         "components/typewriter-effect",

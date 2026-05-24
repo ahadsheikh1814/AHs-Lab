@@ -1,3 +1,4 @@
+"use client";
 import { cn } from '@/lib/utils';
 import { Check, Copy, Terminal } from 'lucide-react';
 import React, { useState } from 'react';

@@ -10,7 +10,7 @@
       "description": "A clean, minimal AI chat input component for React. Supports message submission, keyboard shortcuts, and seamless integration with any LLM-powered interface.",
       "files": [
         {
-          "path": "registry/Ai-Input-basic.tsx",
+          "path": "resistry/Ai-Input-basic.tsx",
           "type": "registry:component",
           "target": "components/ui/Ai-Input-basic.tsx"
         }
@@ -23,7 +23,7 @@
       "description": "A pill-shaped AI chat input with a compact, modern aesthetic. Ideal for floating chat widgets, assistant overlays, and conversational UI layouts.",
       "files": [
         {
-          "path": "registry/Ai-Input-pill.tsx",
+          "path": "resistry/Ai-Input-pill.tsx",
           "type": "registry:component",
           "target": "components/ui/Ai-Input-pill.tsx"
         }
@@ -36,7 +36,7 @@
       "description": "A space-efficient AI chat input designed for sidebars, panels, and tight layouts. Retains full functionality in a minimal footprint.",
       "files": [
         {
-          "path": "registry/Ai-Input-compact.tsx",
+          "path": "resistry/Ai-Input-compact.tsx",
           "type": "registry:component",
           "target": "components/ui/Ai-Input-compact.tsx"
         }
@@ -50,7 +50,7 @@
       "dependencies": ["motion"],
       "files": [
         {
-          "path": "registry/TypeWriterEffect.tsx",
+          "path": "resistry/TypeWriterEffect.tsx",
           "type": "registry:component",
           "target": "components/ui/TypeWriterEffect.tsx"
         }
@@ -64,7 +64,7 @@
       "dependencies": ["motion"],
       "files": [
         {
-          "path": "registry/Buttons.tsx",
+          "path": "resistry/Buttons.tsx",
           "type": "registry:component",
           "target": "components/ui/Buttons.tsx"
         }
@@ -78,7 +78,7 @@
       "dependencies": ["motion"],
       "files": [
         {
-          "path": "registry/BentoHoverEffect.tsx",
+          "path": "resistry/BentoHoverEffect.tsx",
           "type": "registry:component",
           "target": "components/ui/BentoHoverEffect.tsx"
         }
@@ -92,7 +92,7 @@
       "dependencies": ["motion"],
       "files": [
         {
-          "path": "registry/AnimatedMenubar.tsx",
+          "path": "resistry/AnimatedMenubar.tsx",
           "type": "registry:component",
           "target": "components/ui/AnimatedMenubar.tsx"
         }
@@ -106,7 +106,7 @@
       "dependencies": ["motion", "@tabler/icons-react"],
       "files": [
         {
-          "path": "registry/HoverDepthCard.tsx",
+          "path": "resistry/HoverDepthCard.tsx",
           "type": "registry:component",
           "target": "components/ui/HoverDepthCard.tsx"
         }
@@ -120,7 +120,7 @@
       "dependencies": ["motion"],
       "files": [
         {
-          "path": "registry/SpotlightCard.tsx",
+          "path": "resistry/SpotlightCard.tsx",
           "type": "registry:component",
           "target": "components/ui/SpotlightCard.tsx"
         }
@@ -134,7 +134,7 @@
       "dependencies": ["motion"],
       "files": [
         {
-          "path": "registry/SpotlightCardBorderGlow.tsx",
+          "path": "resistry/SpotlightCardBorderGlow.tsx",
           "type": "registry:component",
           "target": "components/ui/SpotlightCardBorderGlow.tsx"
         }
@@ -148,7 +148,7 @@
       "dependencies": ["motion"],
       "files": [
         {
-          "path": "registry/SpotlightCardAnimatedBorder.tsx",
+          "path": "resistry/SpotlightCardAnimatedBorder.tsx",
           "type": "registry:component",
           "target": "components/ui/SpotlightCardAnimatedBorder.tsx"
         }
@@ -162,7 +162,7 @@
       "dependencies": ["motion", "@tabler/icons-react"],
       "files": [
         {
-          "path": "registry/blocks/navigations/Navigation_01.tsx",
+          "path": "resistry/blocks/navigations/Navigation_01.tsx",
           "type": "registry:component",
           "target": "components/ui/navigations/Navigation_01.tsx"
         }
@@ -176,7 +176,7 @@
       "dependencies": ["motion", "@tabler/icons-react"],
       "files": [
         {
-          "path": "registry/blocks/navigations/Navigation_02.tsx",
+          "path": "resistry/blocks/navigations/Navigation_02.tsx",
           "type": "registry:component",
           "target": "components/ui/navigations/Navigation_02.tsx"
         }
@@ -190,7 +190,7 @@
       "dependencies": ["motion"],
       "files": [
         {
-          "path": "registry/blocks/navigations/Navigation_03.tsx",
+          "path": "resistry/blocks/navigations/Navigation_03.tsx",
           "type": "registry:component",
           "target": "components/ui/navigations/Navigation_03.tsx"
         }
@@ -204,7 +204,7 @@
       "dependencies": ["motion", "@tabler/icons-react"],
       "files": [
         {
-          "path": "registry/blocks/sections/FeaturesSection_01.tsx",
+          "path": "resistry/blocks/sections/FeaturesSection_01.tsx",
           "type": "registry:component",
           "target": "components/ui/sections/FeaturesSection_01.tsx"
         }
@@ -218,9 +218,22 @@
       "registryDependencies": ["Navigation_03"],
       "files": [
         {
-          "path": "registry/blocks/sections/hero-section_01.tsx",
+          "path": "resistry/blocks/sections/hero-section_01.tsx",
           "type": "registry:component",
           "target": "components/ui/sections/hero-section_01.tsx"
+        }
+      ]
+    },
+    {
+      "name": "Contact_01",
+      "type": "registry:block",
+      "title": "Contact Section 01",
+      "description": "A minimal, accessible React contact form section for landing pages and SaaS sites. Includes name, email, and message fields with focus states, dark mode support, and a branded submit button — ready to wire to your API or form handler.",
+      "files": [
+        {
+          "path": "resistry/blocks/sections/contact_01.tsx",
+          "type": "registry:component",
+          "target": "components/ui/sections/contact_01.tsx"
         }
       ]
     },
@@ -231,7 +244,7 @@
       "description": "A set of minimal, accessible React input components with clean focus states, label support, and dark mode compatibility. Designed to drop into any form or design system.",
       "files": [
         {
-          "path": "registry/inputs.tsx",
+          "path": "resistry/inputs.tsx",
           "type": "registry:component",
           "target": "components/ui/inputs.tsx"
         }
@@ -244,7 +257,7 @@
       "description": "Minimal, copy-ready CLI command display components for React documentation sites. Includes a single-command block and a multi-tab variant that switches between npm, pnpm, yarn, and bun install commands.",
       "files": [
         {
-          "path": "registry/commands.tsx",
+          "path": "resistry/commands.tsx",
           "type": "registry:component",
           "target": "components/ui/commands.tsx"
         }
